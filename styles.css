@@ -610,7 +610,7 @@ header {
 .contact-col p { color:#efe9dc; font-size:.95rem; margin:0.3rem 0 }
 .contact-col .address { font-size:.85rem; opacity:.95 }
 .footer-bottom { text-align:center; margin-top:1.6rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem }
-.footer-bottom .website { font-size:1.6rem; letter-spacing:2px; color:var(--pale-linen) }
+.footer-bottom .website { font-size:0.8rem; letter-spacing:2px; color:var(--pale-linen) }
 
 /* WhatsApp floating button */
 .whatsapp-fab { position:fixed; right:18px; bottom:18px; background:#25D366; color:#fff; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,0.2); z-index:1200; transition:transform .3s ease; animation:slideUp 1s ease-out both }
@@ -635,7 +635,7 @@ header {
 }
 
 .story-content {
-    max-width: 900px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
