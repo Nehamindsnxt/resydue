@@ -12,6 +12,9 @@
     <header class="animate-fadeIn">
         <nav class="navbar">
             <div class="brand">
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
                 <img src="images/logo.png" alt="Resydue logo" class="logo">
             </div>
             <ul class="nav-links animate-slideIn">
@@ -34,10 +37,10 @@
     <main class="main-content">
         <section id="home" class="hero" style="background-image:url('images/hero-bg.jpg')">
             <div class="hero-content">
-                <h1 class="display animate-slideUp">ELEVATING BRANDS</h1>
-                <p class="subheading animate-slideUp caps">THROUGH EARTH-CONSCIOUS<br>TABLEWARE & PACKAGING</p>
-                <p class="description lead animate-fadeIn">YOUR GATEWAY TO FRESH HORIZONS<br>
-                Exporting the finest selection of spices, agro products and biodegradable products worldwide.</p>
+                <h1 class="display animate-slideUp">EARTH-FRIENDLY PRODUCTS FOR EVERYDAY USE.</h1>
+                <p class="subheading animate-slideUp caps">THROUGH ZERO-WASTE<br>TABLEWARE & ZERO-WASTE PACKAGING</p>
+                <p class="description lead animate-fadeIn">OPENING DOORS TO A ZERO-WASTE WORLD<br>
+             Supplying natural, planet-friendly products for sustainable living worldwide</p>
 
                 <div class="hero-search-wrap animate-scaleIn">
                     <input class="hero-search" type="search" placeholder="Search Products">
@@ -62,59 +65,42 @@
         </section>
 <section class="zero-waste animate-fadeIn">
             <div class="zero-content">
-                <div class="zero-left">
-                    <h2 class="heading">Zero Waste Product</h2>
-                    <p class="body-text small-caption">Sustainable choices, greener future.</p>
-
-                    <div class="zero-thumbs">
-                        <img src="images/zero-thumb1.jpg" alt="product sample 1" class="thumb">
-                        <img src="images/zero-thumb2.jpg" alt="product sample 2" class="thumb">
-                    </div>
-
-                    <p class="website small-caption">w.w.w.resydue.com</p>
+                <div class="zero-left animate-slideIn">
+                    <img src="images/zero-banner.jpg" alt="Eco product 100% recycled material" class="banner-image animate-scaleIn">
                 </div>
 
                 <div class="zero-right">
-                    <div class="beige-card">
-                        <p class="body-text">Sustainability is at the heart of everything we do. As India's leading manufacturer and supplier of eco-friendly packaging materials, we are dedicated to minimizing our environmental impact while delivering high-quality packaging solutions.</p>
-                    </div>
+                    <h2 class="heading animate-slideUp">Zero Waste Product</h2>
+                    <p class="body-text small-caption animate-slideUp">Sustainable choices, greener future.</p>
+                    <p class="body-text animate-slideUp">Sustainability guides every step we take. As a trusted provider of biodegradable and zero-waste products, we are dedicated to offering solutions that respect the planet while delivering unmatched quality. Our products are crafted from natural, eco-friendly materials designed to break down harmlessly, reducing pollution and supporting a cleaner environment. From everyday tableware to innovative packaging alternatives, we focus on creating compostable, reusable, and waste-free options that meet modern lifestyle and business needs. With a commitment to innovation and responsible manufacturing, we aim to inspire a future where sustainable choices are effortless and accessible for all.</p>
+                    <p class="website small-caption animate-slideUp">w.w.w.resydue.com</p>
                 </div>
             </div>
-
-            <!-- <div class="zero-banner">
-                <img src="images/zero-banner.jpg" alt="Eco product 100% recycled material" class="banner-image">
-            </div> -->
         </section>
         <section id="products" class="products animate-fadeIn">
             <h2 class="heading animate-slideUp">Our Products</h2>
 
             <div class="products-grid">
-                <div class="product-item animate-scaleIn">
-                    <div class="product-image">
-                        <img src="images/pizza-box.jpg" alt="Pizza box packaging" class="product-img">
-                    </div>
-                    <div class="product-info light-pink">
-                        <p>Eco Packer, India's leading manufacturer and supplier of eco-friendly packaging materials, offers high-quality Paper Stretch Wrap as a sustainable alternative to conventional plastic stretch wraps.</p>
-                    </div>
+                <div class="product-image animate-popBounce">
+                    <img src="images/pizza-box.jpg" alt="Pizza box packaging" class="product-img">
+                </div>
+                <div class="product-info light-green animate-popSlide">
+                    <p>Eco Packer, India's leading manufacturer and supplier of eco-friendly packaging materials, offers high-quality Paper Stretch Wrap as a sustainable alternative to conventional plastic stretch wraps.</p>
                 </div>
 
-                <div class="product-item animate-scaleIn">
-                    <div class="product-info light-green">
-                        <p>Paper Stretch Wrap is a versatile, eco-friendly wrapping solution made from renewable resources. It is designed to securely bind and protect products during transportation and storage.</p>
-                    </div>
-                    <div class="product-image">
-                        <img src="images/burger-box.jpg" alt="Eco-friendly burger box" class="product-img">
-                    </div>
-                    
+                <div class="product-image animate-popZoom">
+                    <img src="images/burger-box.jpg" alt="Eco-friendly burger box" class="product-img">
                 </div>
 
-                <div class="product-item animate-scaleIn">
-                    <div class="product-image">
-                        <img src="images/coffee-cup.jpg" alt="Sustainable coffee cup" class="product-img">
-                    </div>
-                    <div class="product-info light-peach">
-                        <p>Our Paper Straps are designed to deliver exceptional performance while minimizing environmental impact.</p>
-                    </div>
+                <div class="product-info light-green animate-popSpin">
+                    <p>Paper Stretch Wrap is a versatile, eco-friendly wrapping solution made from renewable resources. It is designed to securely bind and protect products during transportation and storage.</p>
+                </div>
+
+                <div class="product-image animate-popFlip">
+                    <img src="images/coffee-cup.jpg" alt="Sustainable coffee cup" class="product-img">
+                </div>
+                <div class="product-info light-green animate-popWave">
+                    <p>Our Paper Straps are designed to deliver exceptional performance while minimizing environmental impact.</p>
                 </div>
             </div>
             <div class="products-footer">
@@ -162,7 +148,7 @@
                     <img src="images/sustainability.jpg" alt="Sustainable packaging solutions" class="eco-image animate-scaleIn">
                 </div>
             </div>
-        </section> -->
+        </,section> -->
 
         <section class="process animate-fadeIn">
             <h2 class="heading animate-slideUp">Our Sustainable Process</h2>
@@ -263,5 +249,6 @@
 
         <a class="whatsapp-fab" href="https://wa.me/919035766666" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
