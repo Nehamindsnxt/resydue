@@ -5,6 +5,7 @@
     --soft-sand: #E2CBA2;
     --olive-shadow: #3E3F20;
     --warm-gold: #CE8A39;
+    --deep-terra: #A44819;
 }
 
 /* Resydue - Main Stylesheet
@@ -123,7 +124,7 @@ header {
 .btn:hover { background:#b6762f }
 
 /* Push page content below fixed header */
-.main-content { padding-top: }
+.main-content { padding-top: -3px}
 
 /* Hero */
 .hero { min-height:78vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; background-position:center; background-size:cover }
@@ -205,12 +206,12 @@ header {
 }
 
 /* Pastel Color Variations */
-.light-pink { background: #F7E9EB }
-.light-green { background: #EEF7E6 }
-.light-peach { background: #FDEAE3 }
-.light-blue { background: #E9F0F7 }
-.light-yellow { background: #FFF8E6 }
-.light-mint { background: #E6F7F4 }
+.light-pink { background: var(--pale-linen) }
+.light-green { background: var(--soft-sand) }
+.light-peach { background: var(--pale-linen) }
+.light-blue { background: var(--soft-sand) }
+.light-yellow { background: var(--pale-linen) }
+.light-mint { background: var(--soft-sand) }
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
@@ -227,6 +228,36 @@ header {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 0.75rem;
+
+/* Calculator styles */
+.calculator-section { padding: 3rem 5%; background: #f4f7f6 }
+.calculator-wrap { max-width: 1200px; margin: -40px auto 0; text-align: center }
+.calculator-card { background: #fff; border-radius: 28px; padding: 2.25rem; box-shadow: 0 30px 60px rgba(0,0,0,0.12); margin-top: 1.2rem; overflow: hidden }
+.calc-tabs { display:flex; gap:0; justify-content:flex-start; align-items:center; padding:0; border-bottom:1px solid rgba(0,0,0,0.06); background:transparent }
+.calc-tabs .tab { background:transparent; border:none; padding:1rem 1.4rem; border-right:1px solid rgba(0,0,0,0.04); font-weight:700; color:var(--olive-shadow); cursor:default }
+.calc-tabs .tab:last-child { border-right:none }
+.calc-tabs .tab.active { color:var(--warm-gold); background:transparent }
+.calc-table { width:100%; border-collapse:separate; border-spacing:0; margin: 0; }
+.calc-table thead th { text-align:left; padding: 1rem 1rem; color: var(--olive-shadow); font-weight:700 }
+.calc-table tbody td { padding: 1rem; border-top: 1px solid rgba(0,0,0,0.04); vertical-align: middle }
+.calc-table tbody td.label { font-weight:700; color:var(--olive-shadow); width: 280px }
+.calc-table tbody td select, .calc-table tbody td input { width:100%; padding:.6rem .7rem; border-radius:8px; border:1px dashed rgba(0,0,0,0.08); font-size:0.95rem }
+.ghg-value, .savings-value { display:inline-block; color:var(--olive-shadow); font-weight:600 }
+.total-row td { border-top:none }
+.small-note { font-size:0.85rem; color:rgba(0,0,0,0.6); margin-top:0.75rem }
+
+@media (max-width: 900px) {
+    .calc-table, .calc-table thead, .calc-table tbody, .calc-table th, .calc-table td, .calc-table tr { display:block; width:100% }
+    .calc-table thead { display:none }
+    .calc-table tbody td { display:flex; justify-content:space-between; gap: .8rem; padding: .6rem 0.4rem }
+    .calc-table tbody td.label { width: 50% }
+}
+
+@media (min-width: 1100px) {
+    /* make the white card wider on large screens to match screenshot */
+    .calculator-wrap { max-width: 1100px }
+    .calculator-card { padding: 2.5rem 2.5rem }
+}
         grid-auto-flow: column;
         grid-auto-columns: min(280px, 90%);
         grid-template-columns: none;
@@ -411,7 +442,7 @@ header {
     }
 }
 
-.about { padding:4.5rem 5%; background:#fff }
+.about { padding:4.5rem 5%; background:var(--pale-linen) }
 .about .about-content { max-width:900px; margin:0 auto; text-align:center }
 .about-story { margin-top:2rem; text-align:left }
 .about-story .subheading { margin:2rem 0 1rem; color:var(--warm-gold) }
@@ -656,6 +687,7 @@ header {
 .promise-section {
     margin: 4rem 0;
     text-align: center;
+    padding-top: 80px;
 }
 
 .promise-section .heading {
@@ -668,6 +700,7 @@ header {
     grid-template-columns: 1fr;
     gap: 2rem;
     margin-top: 2rem;
+    min-width: 0px;
 }
 
 .promise-card {
@@ -676,7 +709,7 @@ header {
     border-radius: 12px;
     box-shadow: 0 8px 24px rgba(0,0,0,0.08);
     text-align: center;
-    min-height: 220px;
+    min-width: 220px;
 }
 
 .promise-icon {
@@ -996,4 +1029,95 @@ header {
 /* Move Sustainability Button Down */
 .sustainability-text .btn {
     margin-top: 2.25rem;
+}
+
+/* Carbon Calculator Section */
+.calculator-section {
+    padding: 5rem 5%;
+    background: var(--pale-linen);
+    text-align: center;
+}
+
+.calculator-wrap {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.calculator-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    margin-top: 2rem;
+}
+
+.calc-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    justify-content: center;
+}
+
+.tab {
+    padding: 0.8rem 1.5rem;
+    border: 2px solid var(--olive-shadow);
+    background: transparent;
+    color: var(--olive-shadow);
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.tab.active {
+    background: var(--olive-shadow);
+    color: var(--pale-linen);
+}
+
+.calc-table-wrap {
+    overflow-x: auto;
+}
+
+.calc-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+}
+
+.calc-table th,
+.calc-table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--soft-sand);
+}
+
+.calc-table th {
+    background: var(--soft-sand);
+    font-weight: 600;
+    color: var(--olive-shadow);
+}
+
+.calc-table .label {
+    font-weight: 600;
+    color: var(--olive-shadow);
+}
+
+.product-select,
+.material-select,
+.weight-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--soft-sand);
+    border-radius: 4px;
+    background: var(--pale-linen);
+}
+
+.total-row {
+    background: var(--soft-sand);
+}
+
+.small-note {
+    font-size: 0.85rem;
+    color: var(--olive-shadow);
+    opacity: 0.8;
+    text-align: center;
 }
