@@ -652,7 +652,11 @@ header {
 .footer-col ul li a { color:#fff; text-decoration:none; transition:color .25s }
 .footer-col ul li a:hover { color:var(--warm-gold) }
 .contact-col p { color:#efe9dc; font-size:.95rem; margin:0.3rem 0 }
+.contact-col p a { color: #fff; text-decoration: none; transition: color 0.25s }
+.contact-col p a:hover { color: var(--warm-gold) }
 .contact-col .address { font-size:.85rem; opacity:.95 }
+.contact-col .address a { color: #fff; text-decoration: none; transition: color 0.25s }
+.contact-col .address a:hover { color: var(--warm-gold) }
 .footer-bottom { text-align:center; margin-top:1.6rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem }
 .footer-bottom .website { font-size:0.9rem; letter-spacing:1px; color:var(--pale-linen) }
 
