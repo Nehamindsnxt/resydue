@@ -677,7 +677,7 @@ header {
 
 /* About Story Page Styles */
 .about-story {
-    padding: 4rem 5%;
+    padding: 0 5% 4rem;
     background: var(--pale-linen);
 }
 
@@ -705,7 +705,7 @@ header {
 }
 
 .promise-section {
-    margin: 4rem 0;
+    margin: 0;
     text-align: center;
 }
 
