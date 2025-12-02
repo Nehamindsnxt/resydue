@@ -21,7 +21,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="#products">Products</a></li>
-                <li><a href="#calculator">Calculator</a></li>
+                <!-- <li><a href="#calculator">Calculator</a></li> -->
             </ul>
             <div class="nav-right">
                 <!-- <div class="search-container">
@@ -37,17 +37,16 @@
     <main class="main-content">
         <section id="home" class="hero" style="background-image:url('images/hero-bg.jpg')">
             <div class="hero-content">
-                <h1 class="display animate-slideUp">EARTH-FRIENDLY PRODUCTS FOR EVERYDAY USE.</h1>
-                <p class="subheading animate-slideUp caps">THROUGH ZERO-WASTE<br>TABLEWARE & ZERO-WASTE PACKAGING</p>
-                <p class="description lead animate-fadeIn">OPENING DOORS TO A ZERO-WASTE WORLD<br>
-             Supplying natural, planet-friendly products for sustainable living worldwide</p>
+                <h1 class="display animate-slideUp">From Field to Future</h1>
+                <p class="subheading animate-slideUp caps">Sustainable packaging made from agro-byproducts and natural fibres; TABLEWARE & ZERO-WASTE PACKAGING</p>
+                <!-- <p class="description lead animate-fadeIn">Sustainable packaging made from agro-byproducts and natural fibres;<br>
+                     designed for cafés, cloud kitchens, QSRs and food brands. -->
+</p>
 
-                <!-- <div class="hero-search-wrap animate-scaleIn">
-                    <input class="hero-search" type="search" placeholder="Search Products">
-                    <button class="search-btn" aria-label="Search"><i class="fas fa-search"></i></button>
-                </div> -->
+                <div class="hero-cta animate-scaleIn">
+                    <a href="#products" class="btn btn-cta">Explore Products</a>
+                </div>
             </div>
-        </section>
         </section>
 
         
@@ -82,13 +81,17 @@
         </section>
         <section id="products" class="products animate-fadeIn">
             <h2 class="heading animate-slideUp">Our Products</h2>
+            <p class="lead" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Explore packaging made from agro pulp, bagasse, kraft fibre and other natural materials, designed for cafés, cloud kitchens, QSR chains and food brands that refuse to compromise on quality.</p>
 
             <div class="products-grid">
                 <div class="product-image animate-popBounce">
                     <img src="images/pizza-box.jpg" alt="Pizza box packaging" class="product-img">
                 </div>
                 <div class="product-info light-green animate-popSlide">
-                    <p>Eco Packer, India's leading manufacturer and supplier of eco-friendly packaging materials, offers high-quality Paper Stretch Wrap as a sustainable alternative to conventional plastic stretch wraps.</p>
+                    <div class="category-item">
+                        <h3 class="subheading">Bento Boxes (Design)</h3>
+                        <p class="body-text">Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.</p>
+                    </div>
                 </div>
 
                 <div class="product-image animate-popZoom">
@@ -96,14 +99,21 @@
                 </div>
 
                 <div class="product-info light-green animate-popSpin">
-                    <p>Paper Stretch Wrap is a versatile, eco-friendly wrapping solution made from renewable resources. It is designed to securely bind and protect products during transportation and storage.</p>
+                    <div class="category-item">
+                        <h3 class="subheading">Bowls & Lids</h3>
+                        <p class="body-text">Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.</p>
+                    </div>
                 </div>
-
+                
                 <div class="product-image animate-popFlip">
                     <img src="images/coffee-cup.jpg" alt="Sustainable coffee cup" class="product-img">
                 </div>
+                
                 <div class="product-info light-green animate-popWave">
-                    <p>Our Paper Straps are designed to deliver exceptional performance while minimizing environmental impact.</p>
+                    <div class="category-item">
+                        <h3 class="subheading">Meal Trays</h3>
+                        <p class="body-text">Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.</p>
+                    </div>
                 </div>
             </div>
             <div class="products-footer">
@@ -212,18 +222,19 @@
             </div>
         </section>
 
-       
-
-
-
-
-
-
-
-
+        <!-- Tools CTA Section -->
+        <section class="product-cta animate-fadeIn">
+            <div class="product-cta-content">
+                <h2 class="heading">Interactive Tools & Features</h2>
+                <p class="lead">Explore our innovative tools designed to help you make better packaging decisions</p>
+                <div class="product-cta-button">
+                    <a href="tools.html" class="btn-cta">Explore Tools</a>
+                </div>
+            </div>
+        </section>
 
         <!-- Carbon Calculator Section -->
-        <section id="calculator" class="calculator-section animate-fadeIn">
+        <!-- <section id="calculator" class="calculator-section animate-fadeIn">
             <div class="calculator-wrap">
                 <h2 class="heading">Calculate Carbon Savings</h2>
                 <p class="body-text small-caption">Find how much your carbon-footprint reduces with Resydue</p>
@@ -304,8 +315,14 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
+
+    <!-- Download Catalogue Button -->
+    <a href="#" class="download-catalogue-btn">
+        <i class="fas fa-download"></i>
+        <span>Download Catalogue</span>
+    </a>
 
     <footer class="site-footer">
         <div class="footer-top">
@@ -355,7 +372,7 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="website">W.W.W.resydue.com</p>
+            <p class="website">w.w.w.resydue.com</p>
         </div>
 
         <a class="whatsapp-fab" href="https://wa.me/919035766666" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>

@@ -21,11 +21,6 @@
                 <li><a href="contact.html"></a></li>
             </ul>
             <div class="nav-right">
-                <!-- <div class="search-container">
-                    <input class="search-input" type="search" placeholder="Search products...">
-                    <i class="fas fa-search search-icon" aria-hidden="true"></i>
-                </div>
-                <i class="fas fa-shopping-cart cart-icon" aria-hidden="true"></i> -->
                 <a href="contact.html" class="btn">Contact</a>
             </div>
         </nav>
@@ -40,7 +35,10 @@
                     <img src="images/pizza-box1.jpg" alt="Pizza box packaging" class="product-img">
                 </div>
                 <div class="product-info light-green animate-popSlide">
-                    <p>Innovative paper wrap solutions that offer strong, sustainable alternatives to traditional packaging, ensuring durability while reducing environmental impact. Designed for eco-conscious brands, these wraps provide reliable protection without compromising on sustainability.</p>
+                    <div class="category-item">
+                        <h3 class="subheading">Cups & Sippers</h3>
+                        <p class="body-text">Kraft-based and coated beverage containers with safe linings and custom branding options.</p>
+                    </div>
                 </div>
 
                 <div class="product-image animate-popZoom">
@@ -48,18 +46,35 @@
                 </div>
 
                 <div class="product-info light-green animate-popSpin">
-                    <p>Biodegradable takeout containers that provide excellent food protection with minimal environmental impact. Designed for both hot and cold foods, they maintain quality while supporting a greener, waste-free future.</p>
+                    <div class="category-item">
+                        <h3 class="subheading">Cutlery & Accessories</h3>
+                        <p class="body-text">Tree-free forks, spoons, stirrers and trays designed for durability without plastic.</p>
+                    </div>
                 </div>
 
                 <div class="product-image animate-popFlip">
                     <img src="images/coffee-cup1.jpg" alt="Sustainable coffee cup" class="product-img">
                 </div>
+                
                 <div class="product-info light-green animate-popWave">
-                    <p>Our zero-waste biodegradable boxes deliver dependable food protection with minimal environmental impact. Made from renewable materials, they are sturdy, compostable, and perfect for serving hot or cold meals. These containers help you embrace sustainability without sacrificing quality.</p>
+                    <div class="category-item">
+                        <h3 class="subheading">Custom Packaging</h3>
+                        <p class="body-text">Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.</p>
+                    </div>
                 </div>
             </div>
             <div class="products-footer">
                 <a href="ourproducts.html" class="btn see-more-btn animate-scaleIn">See More</a>
+            </div>
+        </section>
+
+        <section class="product-cta animate-fadeIn">
+            <div class="product-cta-content">
+                <h2 class="heading animate-slideUp">Discover Our Sustainable Packaging</h2>
+                <p class="lead animate-slideUp">Explore our full range of bento boxes, bowls, meal trays, lids and cups — all crafted with safe, renewable materials.</p>
+                <div class="product-cta-button animate-scaleIn">
+                    <a href="contact.html" class="btn btn-cta">View Product Range</a>
+                </div>
             </div>
         </section>
 
@@ -93,6 +108,7 @@
         </section>
     </main>
 
+    
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-left">
@@ -124,9 +140,10 @@
             <div class="footer-col">
                 <h3>Useful Links</h3>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#products">Products</a></li>
+                    <li><a href="#calculator">Calculate</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </div>
@@ -140,10 +157,16 @@
         </div>
 
         <div class="footer-bottom">
-            <p class="website">W.W.W.resydue.com</p>
+            <p class="website">w.w.w.resydue.com</p>
         </div>
 
         <a class="whatsapp-fab" href="https://wa.me/919035766666" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </footer>
+    <!-- Bottom Right Button -->
+    <button class="bottom-right-btn" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
 </body>
 </html>
