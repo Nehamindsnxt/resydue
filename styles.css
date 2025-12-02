@@ -652,11 +652,15 @@ header {
 .footer-col ul li a { color:#fff; text-decoration:none; transition:color .25s }
 .footer-col ul li a:hover { color:var(--warm-gold) }
 .contact-col p { color:#efe9dc; font-size:.95rem; margin:0.3rem 0 }
-.contact-col p a { color: #fff; text-decoration: none; transition: color 0.25s }
-.contact-col p a:hover { color: var(--warm-gold) }
+.contact-col p a { color: #fff !important; text-decoration: none; transition: color 0.25s }
+.contact-col p a:hover { color: var(--warm-gold) !important }
+.contact-col p a:visited { color: #fff !important }
+.contact-col p a:active { color: #fff !important }
 .contact-col .address { font-size:.85rem; opacity:.95 }
-.contact-col .address a { color: #fff; text-decoration: none; transition: color 0.25s }
-.contact-col .address a:hover { color: var(--warm-gold) }
+.contact-col .address a { color: #fff !important; text-decoration: none; transition: color 0.25s }
+.contact-col .address a:hover { color: var(--warm-gold) !important }
+.contact-col .address a:visited { color: #fff !important }
+.contact-col .address a:active { color: #fff !important }
 .footer-bottom { text-align:center; margin-top:1.6rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem }
 .footer-bottom .website { font-size:0.9rem; letter-spacing:1px; color:var(--pale-linen) }
 
@@ -755,9 +759,12 @@ header {
 }
 
 @media (max-width: 900px) {
-    .footer-columns { flex-direction:row; justify-content:space-around; gap:1rem; flex-wrap:wrap }
-    .footer-col { max-width:200px; text-align:center }
-    .footer-top { flex-direction:row }
+    .footer-columns { flex-direction:column; gap:2rem }
+    .footer-col { max-width:none; text-align:left }
+    .footer-top { flex-direction:column; text-align:center; gap:1rem }
+    .footer-center { order: 1; text-align:center; width:100% }
+    .footer-left { order: 0 }
+    .footer-right { order: 2 }
 }
 
 @media (max-width: 560px) {
