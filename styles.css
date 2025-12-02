@@ -235,10 +235,12 @@ header {
 
 @media (max-width: 640px) {
     .products-grid {
+        grid-template-columns: 1fr;
         gap: 1rem;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 0.75rem;
+    }
+    .product-img { height: 300px; }
+    .product-info { padding: 1.2rem; min-height: 140px; }
+}
 
 /* Calculator styles */
 .calculator-section { padding: 3rem 5%; background: #f4f7f6 }
