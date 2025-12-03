@@ -40,6 +40,8 @@
                 <h2 class="heading animate-slideUp">Interactive Tools & Features</h2>
                 <p class="lead animate-slideUp">Explore our innovative tools designed to help you make better packaging decisions</p>
                 
+
+
                 <div class="interactive-tools-grid">
                     <div class="tool-item animate-scaleIn">
                         <div class="tool-icon">🔍</div>
@@ -51,7 +53,7 @@
                         <div class="tool-icon">🎨</div>
                         <h3 class="subheading">Custom Print Preview</h3>
                         <p class="body-text">Upload your logo and instantly preview how it looks across multiple product shapes and materials.</p>
-                        <button class="tool-btn">Upload Logo</button>
+                        <button class="tool-btn" onclick="showSelectionPopup()">Upload Logo</button>
                     </div>
                     <div class="tool-item animate-scaleIn">
                         <div class="tool-icon">📊</div>
@@ -140,6 +142,458 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Selection Popup -->
+    <div id="selectionOverlay" class="selection-overlay hidden" onclick="hideSelectionPopup()"></div>
+    <div id="selectionPopup" class="selection-popup hidden">
+        <h3>Choose Action</h3>
+        <div class="selection-buttons">
+            <button class="gallery-btn" onclick="hideSelectionPopup(); showUploadPopup();">Upload Image</button>
+            <button class="gallery-btn" onclick="hideSelectionPopup(); showGalleryPopup();">Preview Products</button>
+        </div>
+    </div>
+
+    <!-- Gallery Popup -->
+    <div id="galleryOverlay" class="gallery-overlay hidden"></div>
+    <div id="galleryPopup" class="gallery-popup hidden">
+        <button class="close-btn" onclick="hideGalleryPopup()">×</button>
+        <div class="gallery-content">
+            <img id="galleryImage" src="" alt="Gallery Image">
+        </div>
+        <div class="controls-section">
+            <div class="logo-controls">
+                <div class="control-row">
+                    <label>Size: </label>
+                    <input type="range" id="logoSize" min="30" max="200" value="80" oninput="updateSizeInput(); applySliderChanges()">
+                    <input type="number" id="sizeInput" min="30" max="200" value="80" style="width: 60px; margin-left: 10px;" oninput="updateSizeSlider()" disabled>
+                    <span>px</span>
+                </div>
+                <div class="control-row">
+                    <label>Rotate: </label>
+                    <input type="range" id="logoRotate" min="0" max="360" value="0" oninput="updateRotateInput(); applySliderChanges()">
+                    <input type="number" id="rotateInput" min="0" max="360" value="0" style="width: 60px; margin-left: 10px;" oninput="updateRotateSlider()" disabled>
+                    <span>°</span>
+                </div>
+                <div class="control-row" style="justify-content: center;">
+                    <button id="editApplyBtn" onclick="toggleEditMode()" style="background: #2c5530; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Edit</button>
+                    <button onclick="resetLogo()" style="background: #ff6b35; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Reset</button>
+                </div>
+            </div>
+            <div class="gallery-nav">
+                <button onclick="prevImage()">‹</button>
+                <span id="imageCounter">1 / 1</span>
+                <button onclick="nextImage()">›</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadOverlay" class="upload-overlay hidden" onclick="hideUploadPopup()"></div>
+    <div id="uploadPopup" class="upload-popup hidden">
+        <h3>Upload Your Logo</h3>
+        <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)">
+        <div id="logoPreview"></div>
+        <div id="uploadButtons" class="hidden">
+            <button class="upload-btn" onclick="uploadLogo()">Upload</button>
+            <button class="cancel-btn" onclick="hideUploadPopup()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="successNotification" class="success-notification hidden">
+        <div class="success-icon">✓</div>
+        <div class="success-text">Logo uploaded successfully!</div>
+    </div>
+
+    <style>
+        .selection-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .selection-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .selection-buttons {
+            margin-top: 20px;
+        }
+        .gallery-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: #ff6b35;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .gallery-btn:hover {
+            background: #e55a2b;
+        }
+        .gallery-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        .gallery-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1001;
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .gallery-content {
+            position: relative;
+            display: inline-block;
+        }
+        .gallery-content img {
+            max-width: 500px;
+            max-height: 400px;
+            display: block;
+            margin: 0 auto;
+        }
+        .logo-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            cursor: move;
+            z-index: 10;
+        }
+        .logo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .controls-section {
+            margin-top: 20px;
+        }
+        .logo-controls {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 4px;
+            color: black;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        .control-row {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .control-row label {
+            min-width: 60px;
+        }
+        .control-row input {
+            flex: 1;
+        }
+        .gallery-nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .gallery-nav button {
+            background: #2c5530;
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
     <script src="script.js"></script>
+    <script>
+        let selectedLogo = null;
+
+        function showUploadPopup() {
+            document.getElementById('uploadOverlay').classList.remove('hidden');
+            document.getElementById('uploadPopup').classList.remove('hidden');
+            showLastUploadedLogo();
+        }
+
+        function showLastUploadedLogo() {
+            const lastLogo = localStorage.getItem('customLogo');
+            if (lastLogo) {
+                const preview = document.getElementById('logoPreview');
+                preview.innerHTML = `<img src="${lastLogo}" alt="Current logo" style="max-width: 200px; max-height: 200px; border: 1px solid #ddd; border-radius: 4px;">`;
+            }
+        }
+
+        function hideUploadPopup() {
+            document.getElementById('uploadOverlay').classList.add('hidden');
+            document.getElementById('uploadPopup').classList.add('hidden');
+            document.getElementById('logoInput').value = '';
+            document.getElementById('logoPreview').innerHTML = '';
+            document.getElementById('uploadButtons').classList.add('hidden');
+            selectedLogo = null;
+        }
+
+        function handleLogoUpload(event) {
+            selectedLogo = event.target.files[0];
+            if (selectedLogo) {
+                const preview = document.getElementById('logoPreview');
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        preview.innerHTML = `<img src="${e.target.result}" alt="Logo Preview" style="max-width: 200px; max-height: 200px; border: 1px solid #ddd; border-radius: 4px;">`;
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(selectedLogo);
+                document.getElementById('uploadButtons').classList.remove('hidden');
+            }
+        }
+
+        function uploadLogo() {
+            if (selectedLogo) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const logoData = e.target.result;
+                    localStorage.setItem('customLogo', logoData);
+                    
+                    // Replace all logos on the page
+                    const logos = document.querySelectorAll('.logo, .footer-logo');
+                    logos.forEach(logo => {
+                        logo.src = logoData;
+                    });
+                    
+                    loadGalleryImages(); // Refresh gallery
+                    showSuccessNotification();
+                    hideUploadPopup();
+                };
+                reader.readAsDataURL(selectedLogo);
+            }
+        }
+        
+        function showSuccessNotification() {
+            const notification = document.getElementById('successNotification');
+            notification.classList.remove('hidden');
+            setTimeout(() => {
+                notification.classList.add('hidden');
+            }, 3000);
+        }
+        
+        let galleryImages = [];
+        let currentImageIndex = 0;
+        
+        function loadGalleryImages() {
+            const images = ['box-pizza.jpg', 'burger-box.jpg', 'coffee-cup.jpg', 'paper-wrap.jpg', 'pizza-box.jpg', 'hero-bg.jpg'];
+            galleryImages = [];
+            
+            // Add product images only
+            images.forEach(img => {
+                galleryImages.push(`images/${img}`);
+            });
+        }
+        
+        function showGalleryPopup() {
+            loadGalleryImages();
+            if (galleryImages.length > 0) {
+                currentImageIndex = 0;
+                document.getElementById('galleryOverlay').classList.remove('hidden');
+                document.getElementById('galleryPopup').classList.remove('hidden');
+                updateGalleryImage();
+            }
+        }
+        
+        function hideGalleryPopup() {
+            document.getElementById('galleryOverlay').classList.add('hidden');
+            document.getElementById('galleryPopup').classList.add('hidden');
+        }
+        
+        function updateGalleryImage() {
+            document.getElementById('galleryImage').src = galleryImages[currentImageIndex];
+            document.getElementById('imageCounter').textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+            
+            // Add logo overlay if exists
+            const savedLogo = localStorage.getItem('customLogo');
+            const existingOverlay = document.querySelector('.logo-overlay');
+            if (existingOverlay) existingOverlay.remove();
+            
+            if (savedLogo) {
+                const overlay = document.createElement('div');
+                overlay.className = 'logo-overlay';
+                overlay.id = 'logoOverlay';
+                overlay.innerHTML = `<img src="${savedLogo}" alt="Logo">`;
+                
+                // Apply current size and rotation settings
+                const currentSize = document.getElementById('logoSize').value;
+                const currentRotation = document.getElementById('logoRotate').value;
+                document.getElementById('sizeInput').value = currentSize;
+                document.getElementById('rotateInput').value = currentRotation;
+                overlay.style.width = currentSize + 'px';
+                overlay.style.height = currentSize + 'px';
+                overlay.style.transform = `rotate(${currentRotation}deg)`;
+                
+                let isDragging = false;
+                overlay.onmousedown = function(e) {
+                    isDragging = true;
+                    e.preventDefault();
+                };
+                document.onmousemove = function(e) {
+                    if (isDragging) {
+                        const rect = document.querySelector('.gallery-content').getBoundingClientRect();
+                        overlay.style.left = (e.clientX - rect.left - 40) + 'px';
+                        overlay.style.top = (e.clientY - rect.top - 40) + 'px';
+                    }
+                };
+                document.onmouseup = function() {
+                    isDragging = false;
+                };
+                document.querySelector('.gallery-content').appendChild(overlay);
+            }
+        }
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateGalleryImage();
+        }
+        
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateGalleryImage();
+        }
+        
+        function updateSizeInput() {
+            document.getElementById('sizeInput').value = document.getElementById('logoSize').value;
+        }
+        
+        function updateSizeSlider() {
+            document.getElementById('logoSize').value = document.getElementById('sizeInput').value;
+        }
+        
+        function updateRotateInput() {
+            document.getElementById('rotateInput').value = document.getElementById('logoRotate').value;
+        }
+        
+        function updateRotateSlider() {
+            document.getElementById('logoRotate').value = document.getElementById('rotateInput').value;
+        }
+        
+        function applySliderChanges() {
+            const size = document.getElementById('logoSize').value;
+            const rotation = document.getElementById('logoRotate').value;
+            const overlay = document.getElementById('logoOverlay');
+            if (overlay) {
+                overlay.style.width = size + 'px';
+                overlay.style.height = size + 'px';
+                overlay.style.transform = `rotate(${rotation}deg)`;
+            }
+        }
+        
+        let isEditMode = false;
+        
+        function toggleEditMode() {
+            const btn = document.getElementById('editApplyBtn');
+            const sizeInput = document.getElementById('sizeInput');
+            const rotateInput = document.getElementById('rotateInput');
+            
+            if (!isEditMode) {
+                // Enable edit mode
+                sizeInput.disabled = false;
+                rotateInput.disabled = false;
+                btn.textContent = 'Apply';
+                btn.style.background = '#ff6b35';
+                isEditMode = true;
+            } else {
+                // Apply changes and disable edit mode
+                const size = sizeInput.value;
+                const rotation = rotateInput.value;
+                document.getElementById('logoSize').value = size;
+                document.getElementById('logoRotate').value = rotation;
+                const overlay = document.getElementById('logoOverlay');
+                if (overlay) {
+                    overlay.style.width = size + 'px';
+                    overlay.style.height = size + 'px';
+                    overlay.style.transform = `rotate(${rotation}deg)`;
+                }
+                sizeInput.disabled = true;
+                rotateInput.disabled = true;
+                btn.textContent = 'Edit';
+                btn.style.background = '#2c5530';
+                isEditMode = false;
+            }
+        }
+        
+        function resetLogo() {
+            document.getElementById('logoSize').value = 80;
+            document.getElementById('logoRotate').value = 0;
+            document.getElementById('sizeInput').value = 80;
+            document.getElementById('rotateInput').value = 0;
+            const overlay = document.getElementById('logoOverlay');
+            if (overlay) {
+                overlay.style.width = '80px';
+                overlay.style.height = '80px';
+                overlay.style.transform = 'rotate(0deg)';
+                overlay.style.left = '20px';
+                overlay.style.top = '20px';
+            }
+            // Reset edit mode
+            const btn = document.getElementById('editApplyBtn');
+            const sizeInput = document.getElementById('sizeInput');
+            const rotateInput = document.getElementById('rotateInput');
+            sizeInput.disabled = true;
+            rotateInput.disabled = true;
+            btn.textContent = 'Edit';
+            btn.style.background = '#2c5530';
+            isEditMode = false;
+        }
+        
+        function showSelectionPopup() {
+            document.getElementById('selectionOverlay').classList.remove('hidden');
+            document.getElementById('selectionPopup').classList.remove('hidden');
+        }
+        
+        function hideSelectionPopup() {
+            document.getElementById('selectionOverlay').classList.add('hidden');
+            document.getElementById('selectionPopup').classList.add('hidden');
+        }
+        
+        // Load custom logo on page load
+        window.addEventListener('load', function() {
+            const savedLogo = localStorage.getItem('customLogo');
+            if (savedLogo) {
+                const logos = document.querySelectorAll('.logo, .footer-logo');
+                logos.forEach(logo => {
+                    logo.src = savedLogo;
+                });
+            }
+            loadGalleryImages();
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Upload</title>
+    <style>
+        .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+                 background: white; padding: 20px; border: 2px solid #ccc; border-radius: 8px; 
+                 box-shadow: 0 4px 8px rgba(0,0,0,0.2); z-index: 1000; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
+                   background: rgba(0,0,0,0.5); z-index: 999; }
+        .hidden { display: none; }
+        input[type="file"] { margin: 10px 0; }
+        button { padding: 8px 16px; margin: 5px; cursor: pointer; }
+        #popupPreview { margin: 10px 0; border: 1px solid #ddd; display: inline-block; }
+        #popupPreview img { display: block; }
+    </style>
+</head>
+<body>
+    <button onclick="showPopup()">Upload Image</button>
+
+    
+    <div id="overlay" class="overlay hidden" onclick="hidePopup()"></div>
+    <div id="popup" class="popup hidden">
+        <h3>Select Image</h3>
+        <input type="file" id="imageInput" accept="image/*" onchange="handleImage(event)">
+        <div id="popupPreview"></div>
+        <div id="uploadButtons" class="hidden">
+            <button onclick="uploadImage()">Upload</button>
+            <button onclick="hidePopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('overlay').classList.remove('hidden');
+            document.getElementById('popup').classList.remove('hidden');
+            showLastUploadedLogo();
+        }
+
+        function showLastUploadedLogo() {
+            const lastLogo = localStorage.getItem('lastUploadedLogo');
+            if (lastLogo) {
+                const preview = document.getElementById('popupPreview');
+                preview.innerHTML = `<img src="${lastLogo}" alt="Last uploaded logo" style="max-width: 200px; max-height: 200px;">`;
+            }
+        }
+
+        function hidePopup() {
+            document.getElementById('overlay').classList.add('hidden');
+            document.getElementById('popup').classList.add('hidden');
+        }
+
+        function showPopupPreview(file) {
+            const preview = document.getElementById('popupPreview');
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    preview.innerHTML = `<img src="${e.target.result}" alt="Preview" style="width: ${this.width}px; height: ${this.height}px;">`;
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+        }
+
+        let selectedFile = null;
+
+        function handleImage(event) {
+            selectedFile = event.target.files[0];
+            if (selectedFile) {
+                showPopupPreview(selectedFile);
+                document.getElementById('uploadButtons').classList.remove('hidden');
+            }
+        }
+
+        function uploadImage() {
+            if (selectedFile) {
+                const formData = new FormData();
+                formData.append('image', selectedFile);
+                
+                fetch('/upload', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // Store the uploaded image for preview
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            localStorage.setItem('lastUploadedLogo', e.target.result);
+                        };
+                        reader.readAsDataURL(selectedFile);
+                        
+                        alert('Image uploaded successfully: ' + data.filename);
+                    } else {
+                        alert('Upload failed: ' + data.error);
+                    }
+                    hidePopup();
+                })
+                .catch(error => {
+                    alert('Upload error: ' + error.message);
+                    hidePopup();
+                });
+            }
+        }
+    </script>
+</body>
+</html>
