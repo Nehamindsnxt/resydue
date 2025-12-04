@@ -460,7 +460,8 @@ header {
 .about-story { margin-top:2rem; text-align:left }
 .about-story .subheading { margin:2rem 0 1rem; color:var(--warm-gold) }
 .about-story .body-text { margin-bottom:1.5rem; line-height:1.7 }
-.features { padding:4.5rem 5%; background:var(--soft-sand) }
+.features { padding:4.5rem 5%; background:var(--soft-sand); text-align:center }
+.features .features-content { max-width:1200px; margin:0 auto; padding:0 2rem }
 .feature-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.6rem; margin-top:1.6rem }
 .feature-card { background:#fff; padding:1.6rem; border-radius:10px; text-align:center; box-shadow:0 8px 24px rgba(0,0,0,.06) }
 .feature-icon { font-size:2rem; color:var(--warm-gold); margin-bottom:.6rem }
@@ -636,10 +637,25 @@ header {
 /* Footer */
 /* Footer (site-footer) */
 .site-footer { background:var(--olive-shadow); color:var(--pale-linen); padding:2.6rem 5%; position:relative }
-.site-footer .footer-top { display:flex; justify-content:space-between; align-items:center; gap:1rem }
+/* Desktop footer layout */
+@media (min-width: 1024px) {
+    .footer-top-desktop { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.04) }
+    .footer-top-mobile, .footer-social-mobile { display:none }
+}
+
+/* Mobile/Tablet footer layout */
+@media (max-width: 1023px) {
+    .footer-top-desktop { display:none }
+    .footer-top-mobile { display:flex; justify-content:flex-start; align-items:center; gap:1rem }
+    .footer-social-mobile { display:flex; flex-direction:column; align-items:center; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.04) }
+    .footer-social-mobile .footer-center { text-align:center; color:#efe9dc }
+    .footer-social-mobile .footer-right { display:flex; gap:.6rem }
+}
+
 .footer-logo { height:40px }
-.footer-center { flex:1; text-align:center; color:#efe9dc }
-.footer-right { display:flex; gap:.6rem }
+.footer-social-right { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem }
+.footer-social-right p { color:#efe9dc; font-size:0.9rem; margin:0 }
+.social-icons { display:flex; gap:.6rem }
 .social-circle { display:inline-flex; align-items:center; justify-content:center; width:44px; height:44px; border-radius:50%; background:#fff; color:var(--olive-shadow); text-decoration:none; box-shadow:0 6px 18px rgba(0,0,0,.12); transition:all .3s ease; position:relative }
 .social-circle:hover { box-shadow:0 0 0 3px var(--warm-gold), 0 8px 24px rgba(0,0,0,.2); transform:translateY(-2px) }
 .social-circle i { font-size:16px }
@@ -661,8 +677,12 @@ header {
 .contact-col .address a:hover { color: var(--warm-gold) !important }
 .contact-col .address a:visited { color: #fff !important }
 .contact-col .address a:active { color: #fff !important }
-.footer-bottom { text-align:center; margin-top:1.6rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem }
-.footer-bottom .website { font-size:0.9rem; letter-spacing:1px; color:var(--pale-linen) }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; margin-top:1.6rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem }
+.footer-social-right { display:flex; flex-direction:column; align-items:flex-end; gap:0.5rem }
+.footer-social-right p { color:#efe9dc; font-size:0.9rem; margin:0 }
+.social-icons { display:flex; gap:.6rem }
+.footer-url { text-align:center; margin-top:1rem }
+.footer-url .website { font-size:0.9rem; letter-spacing:1px; color:var(--pale-linen) }
 
 /* WhatsApp floating button */
 .whatsapp-fab { position:fixed; right:18px; bottom:18px; background:#25D366; color:#fff; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,0.2); z-index:1200; transition:transform .3s ease; animation:slideUp 1s ease-out both }
@@ -773,11 +793,56 @@ header {
     .social-circle { width:38px; height:38px }
 }
 
-/* Responsive tweaks */
-@media (max-width: 900px) {
-    :root { --display-size:2.6rem; --heading-size:1.6rem; --subheading-size:1rem; --body-size:.97rem }
+/* Desktop content alignment */
+@media (min-width: 1024px) {
+    .hero-content,
+    .tools-content,
+    .products .container,
+    .about-content,
+    .features-content,
+    .sustainability-content,
+    .process .container,
+    .impact-content,
+    .brand-story-content,
+    .zero-content,
+    .contact-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+}
+
+/* Responsive font sizes for all devices */
+/* Large Desktop (1440px+) */
+@media (min-width: 1440px) {
+    :root { --display-size:4rem; --heading-size:2.25rem; --subheading-size:1.4rem; --body-size:1.1rem; --lead-size:1.25rem }
+}
+
+/* Desktop (1024px - 1439px) */
+@media (min-width: 1024px) and (max-width: 1439px) {
+    :root { --display-size:3.5rem; --heading-size:2rem; --subheading-size:1.25rem; --body-size:1rem; --lead-size:1.125rem }
+}
+
+/* Tablet (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    :root { --display-size:3rem; --heading-size:1.8rem; --subheading-size:1.15rem; --body-size:0.95rem; --lead-size:1.05rem }
+    .search-input { width:160px }
+    .hero-search { width:350px }
+}
+
+/* Mobile Large (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    :root { --display-size:2.6rem; --heading-size:1.6rem; --subheading-size:1rem; --body-size:0.9rem; --lead-size:1rem }
     .search-input { width:140px }
     .hero-search { width:320px }
+}
+
+/* Mobile Small (320px - 479px) */
+@media (max-width: 479px) {
+    :root { --display-size:2.2rem; --heading-size:1.4rem; --subheading-size:0.95rem; --body-size:0.85rem; --lead-size:0.95rem }
+    .search-input { width:120px }
+    .hero-search { width:280px }
 }
 .mobile-menu-btn { display:none; background:none; border:none; color:var(--pale-linen); font-size:1.1rem; cursor:pointer; padding:0.3rem }
 

@@ -30,7 +30,7 @@
                         <div class="tool-icon">🎨</div>
                         <h3 class="subheading">Custom Print Preview</h3>
                         <p class="body-text">Upload your logo and instantly preview how it looks across multiple product shapes and materials.</p>
-                        <button class="tool-btn" onclick="showSelectionPopup()">Upload Logo</button>
+                        <button class="tool-btn">Upload Logo</button>
                     </div>
                     <div class="tool-item animate-scaleIn">
                         <div class="tool-icon">📊</div>
@@ -306,11 +306,7 @@
                     const logoData = e.target.result;
                     localStorage.setItem('customLogo', logoData);
                     
-                    // Replace all logos on the page
-                    const logos = document.querySelectorAll('.logo, .footer-logo');
-                    logos.forEach(logo => {
-                        logo.src = logoData;
-                    });
+
                     
                     loadGalleryImages(); // Refresh gallery
                     showSuccessNotification();
@@ -504,15 +500,8 @@
             document.getElementById('selectionPopup').classList.add('hidden');
         }
         
-        // Load custom logo on page load
+        // Load gallery images on page load
         window.addEventListener('load', function() {
-            const savedLogo = localStorage.getItem('customLogo');
-            if (savedLogo) {
-                const logos = document.querySelectorAll('.logo, .footer-logo');
-                logos.forEach(logo => {
-                    logo.src = savedLogo;
-                });
-            }
             loadGalleryImages();
         });
     </script>
