@@ -647,6 +647,8 @@ header {
 @media (max-width: 1023px) {
     .footer-top-desktop { display:none }
     .footer-top-mobile { display:flex; justify-content:flex-start; align-items:center; gap:1rem }
+    .footer-columns { display:grid; grid-template-columns:1fr 1fr; gap:1rem }
+    .footer-col.contact-col { grid-column:1/-1 }
     .footer-social-mobile { display:flex; flex-direction:column; align-items:center; gap:1rem; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,255,255,0.04) }
     .footer-social-mobile .footer-center { text-align:center; color:#efe9dc }
     .footer-social-mobile .footer-right { display:flex; gap:.6rem }
@@ -661,6 +663,11 @@ header {
 .social-circle i { font-size:16px }
 .footer-connect { text-align:center; margin:1.2rem 0; color:#efe9dc }
 .footer-columns { display:flex; justify-content:space-around; gap:2rem; margin-top:1rem; align-items:flex-start }
+
+@media (max-width: 768px) {
+    .footer-columns { display:grid; grid-template-columns:1fr 1fr; gap:1rem; justify-content:start }
+    .footer-col.contact-col { grid-column:1/-1; margin-top:1rem }
+}
 .footer-col { flex:1; max-width:320px }
 .footer-col h3 { font-size:1.4rem; margin-bottom:.6rem; color:var(--pale-linen) }
 .footer-col ul { list-style:none; padding:0; margin:0; color:#efe9dc }
@@ -695,9 +702,11 @@ header {
 .bottom-right-btn i { font-size:18px }
 
 /* Download Catalogue Button */
-.download-catalogue-btn { position:fixed; left:18px; bottom:18px; background:var(--olive-shadow); color:var(--pale-linen); padding:.8rem 1.2rem; border-radius:8px; display:flex; align-items:center; gap:.5rem; box-shadow:0 8px 20px rgba(0,0,0,0.2); z-index:1200; transition:all .3s ease; text-decoration:none; font-weight:600; font-size:.9rem }
-.download-catalogue-btn:hover { transform:translateY(-3px); background:#2d2e15; box-shadow:0 12px 30px rgba(0,0,0,0.3) }
+.download-catalogue-btn { position:fixed; left:18px; bottom:18px; background:var(--olive-shadow); color:var(--pale-linen); padding:.8rem; border-radius:8px; display:flex; align-items:center; gap:.5rem; box-shadow:0 8px 20px rgba(0,0,0,0.2); z-index:1200; transition:all .3s ease; text-decoration:none; font-weight:600; font-size:.9rem; overflow:hidden; width:auto }
+.download-catalogue-btn:hover { transform:translateY(-3px); background:#2d2e15; box-shadow:0 12px 30px rgba(0,0,0,0.3); padding:.8rem 1.2rem }
 .download-catalogue-btn i { font-size:14px }
+.download-catalogue-btn span { opacity:0; width:0; transition:all .3s ease; white-space:nowrap }
+.download-catalogue-btn:hover span { opacity:1; width:auto; margin-left:.5rem }
 
 /* Sustainability Button Container */
 .sustainability-text .btn-container {
