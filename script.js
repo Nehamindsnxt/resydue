@@ -1,3 +1,19 @@
+// Load common components
+function loadComponent(elementId, filePath) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(html => {
+            document.getElementById(elementId).innerHTML = html;
+        })
+        .catch(error => console.error('Error loading component:', error));
+}
+
+// Load navbar and footer on page load
+document.addEventListener('DOMContentLoaded', function() {
+    loadComponent('navbar-placeholder', 'navbar.html');
+    loadComponent('footer-placeholder', 'footer.html');
+});
+
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
 }
