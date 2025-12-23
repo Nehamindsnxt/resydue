@@ -1,0 +1,7 @@
+.section-card {
+    /* background: gray; */
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    margin: 2rem 0;
+}
