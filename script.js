@@ -12,7 +12,44 @@ function loadComponent(elementId, filePath) {
 document.addEventListener('DOMContentLoaded', function() {
     loadComponent('navbar-placeholder', 'navbar.html');
     loadComponent('footer-placeholder', 'footer.html');
+    
+    // Initialize capabilities carousel
+    initCapabilitiesCarousel();
 });
+
+// Capabilities Carousel functionality
+function initCapabilitiesCarousel() {
+    const carousel = document.getElementById('cap-cards');
+    const prevBtn = document.getElementById('cap-prev');
+    const nextBtn = document.getElementById('cap-next');
+    
+    if (!carousel || !prevBtn || !nextBtn) return;
+    
+    let currentIndex = 0;
+    const cardWidth = 370; // card width + gap
+    const visibleCards = 3;
+    const totalCards = carousel.children.length;
+    const maxIndex = Math.max(0, totalCards - visibleCards);
+    
+    function updateCarousel() {
+        const translateX = -currentIndex * cardWidth;
+        carousel.style.transform = `translateX(${translateX}px)`;
+    }
+    
+    nextBtn.addEventListener('click', function() {
+        if (currentIndex < maxIndex) {
+            currentIndex++;
+            updateCarousel();
+        }
+    });
+    
+    prevBtn.addEventListener('click', function() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateCarousel();
+        }
+    });
+}
 
 function scrollToTop() {
     window.scrollTo({ top: 0, behavior: 'smooth' });

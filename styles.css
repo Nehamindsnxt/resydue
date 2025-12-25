@@ -135,7 +135,7 @@ header {
 /* Hero */
 .hero { min-height:78vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; background-position:center; background-size:cover }
 .hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.36) }
-.hero-content { position:relative; z-index:2; max-width:980px; padding:6rem 2rem 2rem; margin-bottom: 0;}
+.hero-content { position:relative; z-index:2; max-width:980px; padding:6rem 2rem 2rem; margin-bottom: 0; margin-top: 10px;}
 .hero .display { margin-bottom:.6rem }
 .hero .subheading { margin-bottom:1rem }
 .hero .description { color:var(--soft-sand); margin-bottom:1.4rem; font-size:1.05rem }
