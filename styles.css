@@ -150,6 +150,11 @@ header {
 
 /* Hero */
 .hero { min-height:calc(100vh - 80px); display:flex; align-items:center; justify-content:center; text-align:center; position:relative; background-position:center; background-size:cover; margin-top: 80px; }
+
+/* Align hero with navbar on mobile and tablet */
+@media (max-width: 1024px) {
+    .hero { margin-top: 0; padding-top: 80px; }
+}
 .hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.36) }
 .hero-content { position:relative; z-index:2; max-width:980px; padding:6rem 2rem 2rem; margin-bottom: 0; margin-top: 0; }
 .hero .display { margin-bottom:.6rem }
@@ -869,13 +874,15 @@ header {
 .whatsapp-fab i { font-size:20px }
 
 /* MindsNXT small logo inside footer near WhatsApp */
-.minds-logo { position:absolute; right:60px; bottom:6px; z-index:1199; display:flex; align-items:center; justify-content:center; pointer-events:none; }
-.minds-logo img { width:80px; height:auto; display:block; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.2)); }
+.minds-logo { position:fixed; right:80px; bottom:18px; z-index:1199; display:flex; align-items:center; justify-content:center; pointer-events:none; }
+.minds-logo img { width:72px; height:auto; display:block; filter: drop-shadow(0 6px 18px rgba(0,0,0,0.2)); }
 
-/* Responsive tweak */
-@media (max-width: 480px) {
-  .minds-logo { right:50px; bottom:8px; }
-  .minds-logo img { width:56px; }
+/* Show only on desktop */
+@media (min-width: 1025px) {
+    .minds-logo { display:flex; }
+}
+@media (max-width: 1024px) {
+    .minds-logo { display:none; }
 }
 
 /* Bottom Right Button */
