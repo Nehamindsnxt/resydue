@@ -130,12 +130,12 @@ header {
 .btn:hover { background:#b6762f; transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,.15) }
 
 /* Push page content below fixed header */
-.main-content { padding-top: -3px}
+.main-content { padding-top: 0; }
 
 /* Hero */
-.hero { min-height:78vh; display:flex; align-items:center; justify-content:center; text-align:center; position:relative; background-position:center; background-size:cover }
+.hero { min-height:calc(100vh - 80px); display:flex; align-items:center; justify-content:center; text-align:center; position:relative; background-position:center; background-size:cover; margin-top: 80px; }
 .hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,.36) }
-.hero-content { position:relative; z-index:2; max-width:980px; padding:6rem 2rem 2rem; margin-bottom: 0; margin-top: 10px;}
+.hero-content { position:relative; z-index:2; max-width:980px; padding:6rem 2rem 2rem; margin-bottom: 0; margin-top: 0; }
 .hero .display { margin-bottom:.6rem }
 .hero .subheading { margin-bottom:1rem }
 .hero .description { color:var(--soft-sand); margin-bottom:1.4rem; font-size:1.05rem }
