@@ -17,6 +17,44 @@ document.addEventListener('DOMContentLoaded', function() {
     initCapabilitiesCarousel();
 });
 
+// Show specific product in carousel with animation
+function showProduct(productType) {
+    const productMap = {
+        'bento': 0,
+        'cups': 1,
+        'burger': 2,
+        'meal': 3,
+        'cutlery': 4,
+        'custom': 5,
+        'pizza': 6,
+        'bowls': 7
+    };
+    
+    setTimeout(() => {
+        const cards = document.getElementById('cap-cards');
+        const targetCard = cards?.children[productMap[productType]];
+        
+        if (cards && productMap.hasOwnProperty(productType)) {
+            const targetIndex = productMap[productType];
+            const containerWidth = document.getElementById('cap-carousel').offsetWidth;
+            const cardWidth = containerWidth / 3;
+            const translateX = -targetIndex * cardWidth;
+            
+            // Smooth transition
+            cards.style.transition = 'transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            cards.style.transform = `translateX(${translateX}px)`;
+            
+            // Add highlight animation to target card
+            if (targetCard) {
+                targetCard.style.animation = 'productHighlight 2s ease-in-out';
+                setTimeout(() => {
+                    targetCard.style.animation = '';
+                }, 2000);
+            }
+        }
+    }, 800);
+}
+
 // Capabilities Carousel functionality
 function initCapabilitiesCarousel() {
     const cards = document.getElementById('cap-cards');
