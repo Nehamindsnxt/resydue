@@ -19,35 +19,48 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Capabilities Carousel functionality
 function initCapabilitiesCarousel() {
-    const carousel = document.getElementById('cap-cards');
+    const carousel = document.getElementById('cap-carousel');
     const prevBtn = document.getElementById('cap-prev');
     const nextBtn = document.getElementById('cap-next');
     
     if (!carousel || !prevBtn || !nextBtn) return;
     
-    let currentIndex = 0;
-    const cardWidth = 370; // card width + gap
-    const visibleCards = 3;
-    const totalCards = carousel.children.length;
-    const maxIndex = Math.max(0, totalCards - visibleCards);
+    const cardWidth = 840; // two cards width + gap + margin
     
-    function updateCarousel() {
-        const translateX = -currentIndex * cardWidth;
-        carousel.style.transform = `translateX(${translateX}px)`;
+    function checkButtonStates() {
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        // Handle prev button
+        if (carousel.scrollLeft <= 1) {
+            prevBtn.disabled = true;
+            prevBtn.style.opacity = '0.5';
+            prevBtn.style.cursor = 'not-allowed';
+        } else {
+            prevBtn.disabled = false;
+            prevBtn.style.opacity = '1';
+            prevBtn.style.cursor = 'pointer';
+        }
+        
+        // Handle next button
+        if (carousel.scrollLeft >= maxScroll - 1) {
+            nextBtn.disabled = true;
+            nextBtn.style.opacity = '0.5';
+            nextBtn.style.cursor = 'not-allowed';
+        } else {
+            nextBtn.disabled = false;
+            nextBtn.style.opacity = '1';
+            nextBtn.style.cursor = 'pointer';
+        }
     }
     
     nextBtn.addEventListener('click', function() {
-        if (currentIndex < maxIndex) {
-            currentIndex++;
-            updateCarousel();
-        }
+        carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
+        setTimeout(checkButtonStates, 300);
     });
     
     prevBtn.addEventListener('click', function() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateCarousel();
-        }
+        carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
+        setTimeout(checkButtonStates, 300);
     });
 }
 

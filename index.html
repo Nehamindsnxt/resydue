@@ -739,7 +739,55 @@
         // Load gallery images on page load
         window.addEventListener('load', function() {
             loadGalleryImages();
+            initProductCarousel();
         });
+        
+        // Product carousel scroll detection
+        function initProductCarousel() {
+            const carousel = document.getElementById('cap-carousel');
+            const prevBtn = document.getElementById('cap-prev');
+            const nextBtn = document.getElementById('cap-next');
+            
+            if (carousel && prevBtn && nextBtn) {
+                // Initially disable the previous button and enable next button
+                prevBtn.disabled = true;
+                prevBtn.style.opacity = '0.5';
+                prevBtn.style.cursor = 'not-allowed';
+                
+                nextBtn.disabled = false;
+                nextBtn.style.opacity = '1';
+                nextBtn.style.cursor = 'pointer';
+                
+                // Listen for scroll events on the carousel
+                carousel.addEventListener('scroll', function() {
+                    setTimeout(() => {
+                        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+                        
+                        // Handle prev button (disabled at start)
+                        if (carousel.scrollLeft <= 5) {
+                            prevBtn.disabled = true;
+                            prevBtn.style.opacity = '0.5';
+                            prevBtn.style.cursor = 'not-allowed';
+                        } else {
+                            prevBtn.disabled = false;
+                            prevBtn.style.opacity = '1';
+                            prevBtn.style.cursor = 'pointer';
+                        }
+                        
+                        // Handle next button (disabled at end)
+                        if (carousel.scrollLeft >= maxScroll - 5) {
+                            nextBtn.disabled = true;
+                            nextBtn.style.opacity = '0.5';
+                            nextBtn.style.cursor = 'not-allowed';
+                        } else {
+                            nextBtn.disabled = false;
+                            nextBtn.style.opacity = '1';
+                            nextBtn.style.cursor = 'pointer';
+                        }
+                    }, 100);
+                });
+            }
+        }
     </script>
 
         <!-- Carbon Calculator Section -->
