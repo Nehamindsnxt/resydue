@@ -56,7 +56,7 @@
             <div class="section-card">
                 <div class=""> -->
         <section id="products" class="products animate-fadeIn">
-      <div class="container" style="padding: 0;">
+      <div class="container" style="padding: 0; max-width: 1400px; margin: 0 auto;">
         <div class="container">
             <h2 class="internships-heading" style="font-weight: 700; color: var(--olive-shadow);">Our Products</h2>
             <p class="lead" style="text-align: left; max-width: 800px; margin: 0 0 3rem;">Explore packaging made from agro pulp, bagasse, kraft fibre and other natural materials, designed for cafés, cloud kitchens, QSR chains and food brands that refuse to compromise on quality.</p>
@@ -387,6 +387,7 @@
             z-index: 1001;
             max-width: 90vw;
             max-height: 90vh;
+            overflow: auto;
             text-align: center;
         }
         .close-btn {
@@ -405,20 +406,14 @@
             align-items: center;
             width: 100%;
             max-width: 475px;
-            max-height: 380px;
-            overflow: hidden;
+            max-height: 400px;
             margin: 0 auto;
         }
         .gallery-content img {
-            max-width: 100%;
-            max-height: 100%;
             width: auto;
             height: auto;
-            object-fit: contain;
-        }
-        .gallery-content img {
-            max-width: 500px;
-            max-height: 400px;
+            max-width: 100%;
+            max-height: none;
             display: block;
             margin: 0 auto;
         }
@@ -475,6 +470,27 @@
         .hidden {
             display: none;
         }
+        .upload-overlay {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0,0,0,0.5) !important;
+            z-index: 99999 !important;
+        }
+        .upload-popup {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            background: white !important;
+            padding: 30px !important;
+            border-radius: 8px !important;
+            z-index: 100000 !important;
+            text-align: center !important;
+            min-width: 300px !important;
+        }
     </style>
     <script src="script.js"></script>
     <script>
@@ -483,6 +499,7 @@
         function showUploadPopup() {
             document.getElementById('uploadOverlay').classList.remove('hidden');
             document.getElementById('uploadPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
             showLastUploadedLogo();
         }
 
@@ -500,6 +517,7 @@
             document.getElementById('logoInput').value = '';
             document.getElementById('logoPreview').innerHTML = '';
             document.getElementById('uploadButtons').classList.add('hidden');
+            document.body.style.overflow = 'auto';
             selectedLogo = null;
         }
 
@@ -729,65 +747,19 @@
         function showSelectionPopup() {
             document.getElementById('selectionOverlay').classList.remove('hidden');
             document.getElementById('selectionPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
         }
         
         function hideSelectionPopup() {
             document.getElementById('selectionOverlay').classList.add('hidden');
             document.getElementById('selectionPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
         
         // Load gallery images on page load
         window.addEventListener('load', function() {
             loadGalleryImages();
-            initProductCarousel();
         });
-        
-        // Product carousel scroll detection
-        function initProductCarousel() {
-            const carousel = document.getElementById('cap-carousel');
-            const prevBtn = document.getElementById('cap-prev');
-            const nextBtn = document.getElementById('cap-next');
-            
-            if (carousel && prevBtn && nextBtn) {
-                // Initially disable the previous button and enable next button
-                prevBtn.disabled = true;
-                prevBtn.style.opacity = '0.5';
-                prevBtn.style.cursor = 'not-allowed';
-                
-                nextBtn.disabled = false;
-                nextBtn.style.opacity = '1';
-                nextBtn.style.cursor = 'pointer';
-                
-                // Listen for scroll events on the carousel
-                carousel.addEventListener('scroll', function() {
-                    setTimeout(() => {
-                        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-                        
-                        // Handle prev button (disabled at start)
-                        if (carousel.scrollLeft <= 5) {
-                            prevBtn.disabled = true;
-                            prevBtn.style.opacity = '0.5';
-                            prevBtn.style.cursor = 'not-allowed';
-                        } else {
-                            prevBtn.disabled = false;
-                            prevBtn.style.opacity = '1';
-                            prevBtn.style.cursor = 'pointer';
-                        }
-                        
-                        // Handle next button (disabled at end)
-                        if (carousel.scrollLeft >= maxScroll - 5) {
-                            nextBtn.disabled = true;
-                            nextBtn.style.opacity = '0.5';
-                            nextBtn.style.cursor = 'not-allowed';
-                        } else {
-                            nextBtn.disabled = false;
-                            nextBtn.style.opacity = '1';
-                            nextBtn.style.cursor = 'pointer';
-                        }
-                    }, 100);
-                });
-            }
-        }
     </script>
 
         <!-- Carbon Calculator Section -->

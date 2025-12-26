@@ -19,49 +19,46 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Capabilities Carousel functionality
 function initCapabilitiesCarousel() {
-    const carousel = document.getElementById('cap-carousel');
-    const prevBtn = document.getElementById('cap-prev');
-    const nextBtn = document.getElementById('cap-next');
+    const cards = document.getElementById('cap-cards');
+    const prev = document.getElementById('cap-prev');
+    const next = document.getElementById('cap-next');
+    const cardCount = 8;
+    const cardsPerView = 3;
+    const slideBy = 2;
+    let current = 0;
     
-    if (!carousel || !prevBtn || !nextBtn) return;
-    
-    const cardWidth = 840; // two cards width + gap + margin
-    
-    function checkButtonStates() {
-        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+    function updateCarousel() {
+        const containerWidth = document.getElementById('cap-carousel').offsetWidth;
+        const cardWidth = containerWidth / cardsPerView;
+        const max = Math.max(0, cardCount - cardsPerView);
         
-        // Handle prev button
-        if (carousel.scrollLeft <= 1) {
-            prevBtn.disabled = true;
-            prevBtn.style.opacity = '0.5';
-            prevBtn.style.cursor = 'not-allowed';
-        } else {
-            prevBtn.disabled = false;
-            prevBtn.style.opacity = '1';
-            prevBtn.style.cursor = 'pointer';
-        }
+        if (current < 0) current = 0;
+        if (current > max) current = max;
         
-        // Handle next button
-        if (carousel.scrollLeft >= maxScroll - 1) {
-            nextBtn.disabled = true;
-            nextBtn.style.opacity = '0.5';
-            nextBtn.style.cursor = 'not-allowed';
-        } else {
-            nextBtn.disabled = false;
-            nextBtn.style.opacity = '1';
-            nextBtn.style.cursor = 'pointer';
-        }
+        cards.style.transform = `translateX(-${current * cardWidth}px)`;
+        
+        // Update button states
+        prev.disabled = current === 0;
+        next.disabled = current >= max;
+        prev.style.opacity = current === 0 ? '0.5' : '1';
+        next.style.opacity = current >= max ? '0.5' : '1';
+        prev.style.cursor = current === 0 ? 'not-allowed' : 'pointer';
+        next.style.cursor = current >= max ? 'not-allowed' : 'pointer';
     }
     
-    nextBtn.addEventListener('click', function() {
-        carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
-        setTimeout(checkButtonStates, 300);
-    });
+    prev.onclick = function(e) {
+        e.preventDefault();
+        current -= slideBy;
+        updateCarousel();
+    };
     
-    prevBtn.addEventListener('click', function() {
-        carousel.scrollBy({ left: -cardWidth, behavior: 'smooth' });
-        setTimeout(checkButtonStates, 300);
-    });
+    next.onclick = function(e) {
+        e.preventDefault();
+        current += slideBy;
+        updateCarousel();
+    };
+    
+    updateCarousel();
 }
 
 function scrollToTop() {
