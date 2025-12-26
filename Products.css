@@ -142,12 +142,14 @@
   overflow-x: auto;
   overflow-y: hidden;
   width: 100%;
+  max-width: 1320px;
   padding: 28px 40px;
   perspective: 1000px;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  margin: 0 auto;
 }
 
 #cap-carousel::-webkit-scrollbar {
@@ -173,6 +175,15 @@
   font-size: 1.5rem;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  pointer-events: auto;
+}
+
+.cap-nav-btn:hover {
+  /* Disable hover effects */
+}
+
+.cap-nav-btn:disabled {
+  pointer-events: none;
 }
  
 .cap-nav-container {

@@ -25,13 +25,18 @@ function initCapabilitiesCarousel() {
     
     if (!carousel || !prevBtn || !nextBtn) return;
     
-    const cardWidth = 840; // two cards width + gap + margin
+    const cardWidth = 1260; // three cards width + gap + margin
+    
+    // Initially disable the previous button
+    prevBtn.disabled = true;
+    prevBtn.style.opacity = '0.5';
+    prevBtn.style.cursor = 'not-allowed';
     
     function checkButtonStates() {
         const maxScroll = carousel.scrollWidth - carousel.clientWidth;
         
-        // Handle prev button
-        if (carousel.scrollLeft <= 1) {
+        // Handle prev button - disable when first container is visible
+        if (carousel.scrollLeft < cardWidth / 2) {
             prevBtn.disabled = true;
             prevBtn.style.opacity = '0.5';
             prevBtn.style.cursor = 'not-allowed';
@@ -52,6 +57,11 @@ function initCapabilitiesCarousel() {
             nextBtn.style.cursor = 'pointer';
         }
     }
+    
+    // Add scroll event listener
+    carousel.addEventListener('scroll', function() {
+        setTimeout(checkButtonStates, 50);
+    });
     
     nextBtn.addEventListener('click', function() {
         carousel.scrollBy({ left: cardWidth, behavior: 'smooth' });
