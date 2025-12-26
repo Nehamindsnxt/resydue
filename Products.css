@@ -139,28 +139,17 @@
 }
  
 #cap-carousel {
-  overflow-x: auto;
-  overflow-y: hidden;
+  overflow: hidden;
   width: 100%;
   max-width: 1320px;
   padding: 28px 40px;
-  perspective: 1000px;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
   margin: 0 auto;
 }
 
-#cap-carousel::-webkit-scrollbar {
-  display: none;
-}
- 
 #cap-cards {
   display: flex;
   transition: transform 0.6s cubic-bezier(.77,0,.18,1);
   gap: 50px;
-  transform-style: preserve-3d;
 }
  
 .cap-nav-btn {
