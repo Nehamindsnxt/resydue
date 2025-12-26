@@ -811,7 +811,7 @@ header {
 .site-footer { background:var(--olive-shadow); color:var(--pale-linen); padding:2.6rem 5%; position:relative }
 /* Desktop footer layout */
 @media (min-width: 1024px) {
-    .footer-top-desktop { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid rgba(255,255,255,0.04) }
+    .footer-top-desktop { display:flex; justify-content:space-between; align-items:center; margin-bottom:2rem; padding-bottom:1rem }
     .footer-top-mobile, .footer-social-mobile { display:none }
 }
 
