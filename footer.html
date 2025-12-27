@@ -23,14 +23,14 @@
         <div class="footer-col">
             <h3>Products</h3>
             <ul>
-                <li><a href="index.html#products" onclick="showProduct('bento')">Bento Boxes</a></li>
-                <li><a href="index.html#products" onclick="showProduct('cups')">Cups & Sippers</a></li>
-                <li><a href="index.html#products" onclick="showProduct('burger')">Burger Boxes</a></li>
-                <li><a href="index.html#products" onclick="showProduct('meal')">Meal Trays</a></li>
-                <li><a href="index.html#products" onclick="showProduct('cutlery')">Cutlery & Accessories</a></li>
-                <li><a href="index.html#products" onclick="showProduct('custom')">Custom Packaging</a></li>
-                <li><a href="index.html#products" onclick="showProduct('pizza')">Pizza Boxes</a></li>
-                <li><a href="index.html#products" onclick="showProduct('bowls')">Bowls & Lids</a></li>
+                <li><a href="#" onclick="showProductPopup('Bento Boxes')">Bento Boxes</a></li>
+                <li><a href="#" onclick="showProductPopup('Cups & Sippers')">Cups & Sippers</a></li>
+                <li><a href="#" onclick="showProductPopup('Burger Boxes')">Burger Boxes</a></li>
+                <li><a href="#" onclick="showProductPopup('Meal Trays')">Meal Trays</a></li>
+                <li><a href="#" onclick="showProductPopup('Cutlery & Accessories')">Cutlery & Accessories</a></li>
+                <li><a href="#" onclick="showProductPopup('Custom Packaging')">Custom Packaging</a></li>
+                <li><a href="#" onclick="showProductPopup('Pizza Boxes')">Pizza Boxes</a></li>
+                <li><a href="#" onclick="showProductPopup('Bowls & Lids')">Bowls & Lids</a></li>
             </ul>
         </div>
 
@@ -89,6 +89,19 @@
 
     
 </footer>
+
+<!-- Product Images Popup -->
+<div id="productPopupOverlay" class="product-popup-overlay" onclick="closeProductPopup()"></div>
+<div id="productPopup" class="product-popup">
+    <div class="product-popup-header">
+        <h3 id="productPopupTitle" class="product-popup-title">Product Images</h3>
+        <button class="product-popup-close" onclick="closeProductPopup()">&times;</button>
+    </div>
+    <div id="productPopupDescription" class="product-popup-description"></div>
+    <div id="productImagesContainer" class="product-images-grid">
+        <!-- Images will be loaded here -->
+    </div>
+</div>
 
 <!-- Bottom Right Button -->
 <button class="bottom-right-btn" onclick="scrollToTop()">

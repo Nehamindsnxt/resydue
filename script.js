@@ -181,3 +181,99 @@ document.addEventListener('DOMContentLoaded', function () {
     // initialize
     [0,1,2].forEach(c => recalcColumn(c));
 });
+
+// Product Popup Functionality
+function showProductPopup(productName) {
+    // Scroll to footer before showing popup
+    const footer = document.querySelector('.site-footer');
+    if (footer) {
+        footer.scrollIntoView({ behavior: 'smooth' });
+    }
+    
+    const productData = {
+        'Bento Boxes': {
+            images: ['Bento.jpg'],
+            description: 'Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.'
+        },
+        'Cups & Sippers': {
+            images: ['coffee-cup.jpg', 'coffee-cup1.jpg'],
+            description: 'Kraft-based and coated beverage containers with safe linings and custom branding options.'
+        },
+        'Burger Boxes': {
+            images: ['burger-box.jpg', 'burger-box1.jpg'],
+            description: 'Sturdy, moisture-wicking, and easy-to-handle clamshells designed to keep buns soft and prevent structural collapse.'
+        },
+        'Meal Trays': {
+            images: ['mealtray.jpg'],
+            description: 'Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.'
+        },
+        'Cutlery & Accessories': {
+            images: ['CA.jpg'],
+            description: 'Tree-free forks, spoons, stirrers and trays designed for durability without plastic.'
+        },
+        'Custom Packaging': {
+            images: ['CP.jpg', 'paper-wrap.jpg'],
+            description: 'Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.'
+        },
+        'Pizza Boxes': {
+            images: ['Pizza.jpg', 'box-pizza2.jpg'],
+            description: 'Ventilated, crush-resistant, and grease-proof designs that maintain crust crispness and retain heat during transit.'
+        },
+        'Bowls & Lids': {
+            images: ['BL.webp'],
+            description: 'Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.'
+        }
+    };
+    
+    const popup = document.getElementById('productPopup');
+    const overlay = document.getElementById('productPopupOverlay');
+    const title = document.getElementById('productPopupTitle');
+    const description = document.getElementById('productPopupDescription');
+    const container = document.getElementById('productImagesContainer');
+    
+    if (!popup || !overlay || !title || !description || !container) return;
+    
+    const product = productData[productName];
+    if (!product) return;
+    
+    title.textContent = productName;
+    description.textContent = product.description;
+    
+    if (product.images.length === 0) {
+        container.innerHTML = '<div class="no-images-message">No images available for this product.</div>';
+    } else {
+        container.innerHTML = product.images.map(img => 
+            `<div class="product-image-item">
+                <img src="images/${img}" alt="${productName}" onerror="this.parentElement.style.display='none'">
+            </div>`
+        ).join('');
+    }
+    
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeProductPopup() {
+    const popup = document.getElementById('productPopup');
+    const overlay = document.getElementById('productPopupOverlay');
+    
+    if (popup && overlay) {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        
+        // Keep page at footer after closing popup
+        const footer = document.querySelector('.site-footer');
+        if (footer) {
+            footer.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+}
+
+// Close popup when pressing Escape key
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeProductPopup();
+    }
+});
