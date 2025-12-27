@@ -182,6 +182,37 @@ document.addEventListener('DOMContentLoaded', function () {
     [0,1,2].forEach(c => recalcColumn(c));
 });
 
+// Card Popup Functionality
+function showCardPopup(title, description, imageSrc) {
+    const popup = document.getElementById('cardPopup');
+    const overlay = document.getElementById('cardPopupOverlay');
+    const titleEl = document.getElementById('cardPopupTitle');
+    const descEl = document.getElementById('cardPopupDescription');
+    const imageEl = document.getElementById('cardPopupImage');
+    
+    if (!popup || !overlay || !titleEl || !descEl || !imageEl) return;
+    
+    titleEl.textContent = title;
+    descEl.textContent = description;
+    imageEl.src = imageSrc;
+    imageEl.alt = title;
+    
+    overlay.style.display = 'block';
+    popup.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCardPopup() {
+    const popup = document.getElementById('cardPopup');
+    const overlay = document.getElementById('cardPopupOverlay');
+    
+    if (popup && overlay) {
+        popup.style.display = 'none';
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
 // Product Popup Functionality
 function showProductPopup(productName) {
     // Scroll to footer before showing popup

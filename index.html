@@ -66,56 +66,56 @@
           <div id="cap-carousel">
             <div id="cap-cards">
              <!-- Card 1 -->
-              <div class="cap-card" style="background-image: url(images/Bento.jpg);">
+              <div class="cap-card" style="background-image: url(images/Bento.jpg);" onclick="showCardPopup('Bento Boxes', 'Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.', 'images/Bento.jpg')">
                 <div class="card-text-overlay">
              <h3 class="subheading">Bento Boxes </h3>    
             <p class="body-text">Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.</p>
                 </div>
               </div>
                <!-- Card 2 -->
-              <div class="cap-card" style="background-image: url(images/coffee-cup.jpg);">
+              <div class="cap-card" style="background-image: url(images/coffee-cup.jpg);" onclick="showCardPopup('Cups & Sippers', 'Kraft-based and coated beverage containers with safe linings and custom branding options.', 'images/coffee-cup.jpg')">
                 <div class="card-text-overlay">
                   <h3>Cups & Sippers</h3>
                   <p class="body-text">Kraft-based and coated beverage containers with safe linings and custom branding options.</p>
                 </div>
               </div>
               <!-- Card 3 -->
-              <div class="cap-card" style="background-image: url(images/burger-box.jpg);">
+              <div class="cap-card" style="background-image: url(images/burger-box.jpg);" onclick="showCardPopup('Burger Boxes', 'Sturdy, moisture-wicking, and easy-to-handle clamshells designed to keep buns soft and prevent structural collapse.', 'images/burger-box.jpg')">
                 <div class="card-text-overlay card-text-overlay2">
                   <h3>Burger Boxes</h3>
                 <p class="body-text">Sturdy, moisture-wicking, and easy-to-handle clamshells designed to keep buns soft and prevent structural collapse.</p>
                 </div>
               </div>
               <!-- Card 4 -->
-              <div class="cap-card" style="background-image: url(images/mealtray.jpg);">
+              <div class="cap-card" style="background-image: url(images/mealtray.jpg);" onclick="showCardPopup('Meal Trays', 'Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.', 'images/mealtray.jpg')">
                 <div class="card-text-overlay">
                   <h3>Meal Trays</h3>
                         <p class="body-text">Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.</p>
                 </div>
               </div>
               <!-- Card 5 -->
-              <div class="cap-card" style="background-image: url(images/CA.jpg);">
+              <div class="cap-card" style="background-image: url(images/CA.jpg);" onclick="showCardPopup('Cutlery & Accessories', 'Tree-free forks, spoons, stirrers and trays designed for durability without plastic.', 'images/CA.jpg')">
                 <div class="card-text-overlay card-text-overlay4">
                   <h3>Cutlery & Accessories</h3>
                         <p class="body-text">Tree-free forks, spoons, stirrers and trays designed for durability without plastic.</p>
                 </div>
               </div>
               <!-- Card 6 -->
-              <div class="cap-card" style="background-image: url(images/CP.jpg);">
+              <div class="cap-card" style="background-image: url(images/CP.jpg);" onclick="showCardPopup('Custom Packaging', 'Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.', 'images/CP.jpg')">
                 <div class="card-text-overlay card-text-overlay5">
                  <h3>Custom Packaging</h3>
                  <p class="body-text">Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.</p>
                 </div>
               </div>
               <!-- Card 7 -->
-              <div class="cap-card" style="background-image: url(images/Pizza.jpg);">
+              <div class="cap-card" style="background-image: url(images/Pizza.jpg);" onclick="showCardPopup('Pizza Boxes', 'Ventilated, crush-resistant, and grease-proof designs that maintain crust crispness and retain heat during transit.', 'images/Pizza.jpg')">
                 <div class="card-text-overlay card-text-overlay6">
                   <h3>Pizza Boxes</h3>
                   <p>Ventilated, crush-resistant, and grease-proof designs that maintain crust crispness and retain heat during transit..</p>
                 </div>
               </div>
               <!-- Card 8 -->
-              <div class="cap-card" style="background-image: url(images/BL.webp);">
+              <div class="cap-card" style="background-image: url(images/BL.webp);" onclick="showCardPopup('Bowls & Lids', 'Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.', 'images/BL.webp')">
                 <div class="card-text-overlay card-text-overlay7">
                   <h3>Bowls & Lids</h3>
                   <p>Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.</p>
@@ -410,10 +410,9 @@
             margin: 0 auto;
         }
         .gallery-content img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            max-height: none;
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
             display: block;
             margin: 0 auto;
         }
@@ -567,10 +566,9 @@
         let currentImageIndex = 0;
         
         function loadGalleryImages() {
-            const images = ['box-pizza.jpg', 'burger-box.jpg', 'coffee-cup.jpg', 'paper-wrap.jpg', 'pizza-box.jpg', 'hero-bg.jpg'];
+            const images = ['Bento.jpg', 'coffee-cup.jpg', 'burger-box.jpg', 'mealtray.jpg', 'CA.jpg', 'CP.jpg', 'Pizza.jpg', 'BL.webp'];
             galleryImages = [];
             
-            // Add product images only
             images.forEach(img => {
                 galleryImages.push(`images/${img}`);
             });

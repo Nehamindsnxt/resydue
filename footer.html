@@ -90,6 +90,17 @@
     
 </footer>
 
+<!-- Card Popup -->
+<div id="cardPopupOverlay" class="card-popup-overlay" onclick="closeCardPopup()"></div>
+<div id="cardPopup" class="card-popup">
+    <button class="card-popup-close" onclick="closeCardPopup()">&times;</button>
+    <div class="card-popup-content">
+        <h3 id="cardPopupTitle" class="card-popup-title">Product</h3>
+        <p id="cardPopupDescription" class="card-popup-description">Description</p>
+        <img id="cardPopupImage" class="card-popup-image" src="" alt="Product">
+    </div>
+</div>
+
 <!-- Product Images Popup -->
 <div id="productPopupOverlay" class="product-popup-overlay" onclick="closeProductPopup()"></div>
 <div id="productPopup" class="product-popup">

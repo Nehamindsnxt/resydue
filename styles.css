@@ -264,6 +264,77 @@ header {
     .product-info { padding: 1.2rem; min-height: 140px; }
 }
 
+/* Card Popup Styles */
+.card-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 9998;
+    display: none;
+}
+
+.card-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow-y: auto;
+    z-index: 9999;
+    display: none;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.card-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(0,0,0,0.1);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--olive-shadow);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-popup-content {
+    text-align: center;
+}
+
+.card-popup-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--olive-shadow);
+    margin-bottom: 1rem;
+}
+
+.card-popup-description {
+    font-size: 1.1rem;
+    color: var(--olive-shadow);
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.card-popup-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
 /* Product Popup Styles */
 .product-popup-overlay {
     position: fixed;
