@@ -272,6 +272,7 @@
     <div id="selectionOverlay" class="selection-overlay hidden" onclick="hideSelectionPopup()"></div>
     <div id="selectionPopup" class="selection-popup hidden">
         <h3>Choose Action</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Select an option to get started with your logo customization. Upload a new logo or preview your existing logo on our eco-friendly packaging products.</p>
         <div class="selection-buttons">
             <button class="gallery-btn" onclick="hideSelectionPopup(); showUploadPopup();">Upload Image</button>
             <button class="gallery-btn" onclick="hideSelectionPopup(); showGalleryPopup();">Preview Products</button>
@@ -282,6 +283,8 @@
     <div id="galleryOverlay" class="gallery-overlay hidden"></div>
     <div id="galleryPopup" class="gallery-popup hidden">
         <button class="close-btn" onclick="hideGalleryPopup()">×</button>
+        <h3 style="margin-bottom: 0.5rem;">Product Preview</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Preview your uploaded logo on our eco-friendly packaging products. Use the controls below to adjust logo size, rotation, and drag to reposition. Navigate through different product types using the arrow buttons.</p>
         <div class="gallery-content">
             <img id="galleryImage" src="" alt="Gallery Image">
         </div>
@@ -300,8 +303,8 @@
                     <span>°</span>
                 </div>
                 <div class="control-row" style="justify-content: center;">
-                    <button id="editApplyBtn" onclick="toggleEditMode()" style="background: #2c5530; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-right: 10px;">Edit</button>
-                    <button onclick="resetLogo()" style="background: #ff6b35; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Reset</button>
+                    <button id="editApplyBtn" onclick="toggleEditMode()" style="background: var(--warm-gold); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-right: 10px; font-weight: 600; transition: all 0.3s ease;">Edit</button>
+                    <button onclick="resetLogo()" style="background: var(--olive-shadow); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Reset</button>
                 </div>
             </div>
             <div class="gallery-nav">
@@ -316,7 +319,7 @@
     <div id="uploadOverlay" class="upload-overlay hidden" onclick="hideUploadPopup()"></div>
     <div id="uploadPopup" class="upload-popup hidden">
         <h3>Upload Your Logo</h3>
-        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Choose an image file to upload your logo and preview it on our products.</p>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Upload your company logo to see how it looks on our eco-friendly packaging products. Supported formats: JPG, PNG, GIF. After uploading, you can preview your logo on different products using product preview option.</p>
         <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)">
         <div id="logoPreview"></div>
         <div id="uploadButtons" class="hidden">
@@ -329,6 +332,25 @@
     <div id="successNotification" class="success-notification hidden">
         <div class="success-icon">✓</div>
         <div class="success-text">Logo uploaded successfully!</div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successOverlay" class="upload-overlay hidden" onclick="hideSuccessPopup()"></div>
+    <div id="successPopup" class="success-popup hidden">
+        <h3>Upload Success</h3>
+        <p id="successMessage"></p>
+        <div style="margin-top: 20px;">
+            <button onclick="goToProductPreview()" style="margin-right: 10px;">Preview Products</button>
+            <button onclick="hideSuccessPopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- Error Popup -->
+    <div id="errorOverlay" class="upload-overlay hidden" onclick="hideErrorPopup()"></div>
+    <div id="errorPopup" class="error-popup hidden">
+        <h3>Upload Error</h3>
+        <p id="errorMessage"></p>
+        <button onclick="hideErrorPopup()">OK</button>
     </div>
 </div>
 </section>
@@ -359,14 +381,17 @@
         .gallery-btn {
             padding: 10px 20px;
             margin: 0 10px;
-            background: #ff6b35;
+            background: var(--warm-gold);
             color: white;
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
         .gallery-btn:hover {
-            background: #e55a2b;
+            background: #b6762f;
+            transform: translateY(-1px);
         }
         .gallery-overlay {
             position: fixed;
@@ -459,13 +484,19 @@
             margin-top: 15px;
         }
         .gallery-nav button {
-            background: #2c5530;
+            background: var(--warm-gold);
             color: white;
             border: none;
             padding: 5px 15px;
             margin: 0 10px;
             cursor: pointer;
             border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .gallery-nav button:hover {
+            background: #b6762f;
+            transform: translateY(-1px);
         }
         .hidden {
             display: none;
@@ -490,6 +521,73 @@
             z-index: 100000 !important;
             text-align: center !important;
             min-width: 300px !important;
+        }
+        .error-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            z-index: 100001;
+            text-align: center;
+            min-width: 300px;
+            border: 2px solid #dc3545;
+        }
+        .error-popup h3 {
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+        .error-popup button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .success-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 100002;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .success-icon {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            z-index: 100001;
+            text-align: center;
+            min-width: 300px;
+            border: 2px solid #28a745;
+        }
+        .success-popup h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        .success-popup button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
         }
     </style>
     <script src="script.js"></script>
@@ -524,6 +622,14 @@
         function handleLogoUpload(event) {
             selectedLogo = event.target.files[0];
             if (selectedLogo) {
+                // Validate file type
+                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+                if (!allowedTypes.includes(selectedLogo.type)) {
+                    showErrorPopup('Please select a valid image file (JPG, PNG, or GIF)');
+                    event.target.value = '';
+                    return;
+                }
+                
                 const preview = document.getElementById('logoPreview');
                 const reader = new FileReader();
                 reader.onload = function(e) {
@@ -540,27 +646,64 @@
 
         function uploadLogo() {
             if (selectedLogo) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    const logoData = e.target.result;
-                    localStorage.setItem('customLogo', logoData);
-                    
-
-                    
-                    loadGalleryImages(); // Refresh gallery
-                    showSuccessNotification();
-                    hideUploadPopup();
-                };
-                reader.readAsDataURL(selectedLogo);
+                try {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const logoData = e.target.result;
+                            localStorage.setItem('customLogo', logoData);
+                            loadGalleryImages();
+                            showSuccessNotification();
+                            hideUploadPopup();
+                        } catch (error) {
+                            showErrorPopup('Failed to save logo. Please try again.');
+                        }
+                    };
+                    reader.onerror = function() {
+                        showErrorPopup('Failed to read file. Please try again.');
+                    };
+                    reader.readAsDataURL(selectedLogo);
+                } catch (error) {
+                    showErrorPopup('Upload failed. Please try again.');
+                }
+            } else {
+                showErrorPopup('No file selected. Please select a file first.');
             }
         }
         
         function showSuccessNotification() {
-            const notification = document.getElementById('successNotification');
-            notification.classList.remove('hidden');
-            setTimeout(() => {
-                notification.classList.add('hidden');
-            }, 3000);
+            showSuccessPopup('Logo uploaded successfully!');
+        }
+        
+        function showSuccessPopup(message) {
+            document.getElementById('successMessage').textContent = message;
+            document.getElementById('successOverlay').classList.remove('hidden');
+            document.getElementById('successPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideSuccessPopup() {
+            document.getElementById('successOverlay').classList.add('hidden');
+            document.getElementById('successPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function goToProductPreview() {
+            hideSuccessPopup();
+            showGalleryPopup();
+        }
+        
+        function showErrorPopup(message) {
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorOverlay').classList.remove('hidden');
+            document.getElementById('errorPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideErrorPopup() {
+            document.getElementById('errorOverlay').classList.add('hidden');
+            document.getElementById('errorPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
         
         let galleryImages = [];
@@ -699,7 +842,7 @@
                 sizeInput.disabled = false;
                 rotateInput.disabled = false;
                 btn.textContent = 'Apply';
-                btn.style.background = '#ff6b35';
+                btn.style.background = 'var(--olive-shadow)';
                 isEditMode = true;
             } else {
                 // Apply changes and disable edit mode
@@ -716,7 +859,7 @@
                 sizeInput.disabled = true;
                 rotateInput.disabled = true;
                 btn.textContent = 'Edit';
-                btn.style.background = '#2c5530';
+                btn.style.background = 'var(--warm-gold)';
                 isEditMode = false;
             }
         }
@@ -741,7 +884,7 @@
             sizeInput.disabled = true;
             rotateInput.disabled = true;
             btn.textContent = 'Edit';
-            btn.style.background = '#2c5530';
+            btn.style.background = 'var(--warm-gold)';
             isEditMode = false;
         }
         
