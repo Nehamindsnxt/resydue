@@ -316,6 +316,7 @@
     <div id="uploadOverlay" class="upload-overlay hidden" onclick="hideUploadPopup()"></div>
     <div id="uploadPopup" class="upload-popup hidden">
         <h3>Upload Your Logo</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem;">Choose an image file to upload your logo and preview it on our products.</p>
         <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)">
         <div id="logoPreview"></div>
         <div id="uploadButtons" class="hidden">
@@ -580,6 +581,7 @@
                 currentImageIndex = 0;
                 document.getElementById('galleryOverlay').classList.remove('hidden');
                 document.getElementById('galleryPopup').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
                 updateGalleryImage();
             }
         }
@@ -587,6 +589,7 @@
         function hideGalleryPopup() {
             document.getElementById('galleryOverlay').classList.add('hidden');
             document.getElementById('galleryPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
         }
         
         function updateGalleryImage() {
