@@ -1,0 +1,156 @@
+{
+  "title": "Bento Boxes",
+  "name": "Premium Bento Boxes",
+  "breadcrumb": "<a href='index.html'>Home</a> > <a href='#products'>Products</a> > <span>Bento Boxes</span>",
+  "price": {
+    "current": "₹12.50",
+    "original": "₹15.00",
+    "discount": "17% OFF",
+    "note": "Price per piece (Bulk orders available)"
+  },
+  "quantity": {
+    "minOrder": "Minimum order: 100 pieces",
+    "bulkDiscount": "500+ pieces: Extra 5% off"
+  },
+  "images": {
+    "main": "images/Bento.jpg",
+    "thumbnails": [
+      "images/Bento.jpg",
+      "images/mealtray.jpg",
+      "images/burger-box.jpg",
+      "images/CP.jpg",
+      "images/BL.webp"
+    ]
+  },
+  "locations": [
+    {
+      "name": "Mumbai Warehouse",
+      "address": "Andheri East, Mumbai - 400069",
+      "status": "In Stock",
+      "delivery": "2-3 days delivery"
+    },
+    {
+      "name": "Delhi Distribution Center",
+      "address": "Gurgaon, Haryana - 122001",
+      "status": "In Stock",
+      "delivery": "3-4 days delivery"
+    },
+    {
+      "name": "Bangalore Hub",
+      "address": "Whitefield, Bangalore - 560066",
+      "status": "Limited Stock",
+      "delivery": "4-5 days delivery"
+    }
+  ],
+  "features": [
+    {
+      "icon": "fas fa-leaf",
+      "text": "100% Biodegradable & Compostable"
+    },
+    {
+      "icon": "fas fa-shield-alt",
+      "text": "Food Safe & Non-Toxic"
+    },
+    {
+      "icon": "fas fa-truck",
+      "text": "Free Delivery on 1000+ pieces"
+    },
+    {
+      "icon": "fas fa-award",
+      "text": "ISO Certified Quality"
+    }
+  ],
+  "description": {
+    "usage": "Our Premium Bento Boxes are the perfect sustainable packaging solution for modern food businesses. These compartmentalized containers are specifically designed for:",
+    "usageList": [
+      "Asian Restaurants: Perfect for rice bowls, noodle dishes, and traditional bento meals",
+      "Corporate Catering: Organized meal presentations for office lunches and events",
+      "Food Delivery Services: Leak-proof containers that maintain food quality during transport",
+      "Meal Prep Businesses: Portion-controlled meals with separate compartments",
+      "Cloud Kitchens: Efficient packaging for combo meals and multi-item orders",
+      "Event Catering: Easy serving and cleanup for large gatherings"
+    ],
+    "benefits": [
+      {
+        "icon": "fas fa-droplet",
+        "title": "Leak-Resistant Design",
+        "description": "Advanced sealing technology prevents spills and maintains food integrity"
+      },
+      {
+        "icon": "fas fa-fire",
+        "title": "Heat Resistant",
+        "description": "Withstands temperatures up to 120°C, perfect for hot foods"
+      },
+      {
+        "icon": "fas fa-snowflake",
+        "title": "Freezer Safe",
+        "description": "Can be stored in freezers down to -20°C without damage"
+      },
+      {
+        "icon": "fas fa-microchip",
+        "title": "Microwave Compatible",
+        "description": "Safe for reheating food up to 2 minutes"
+      }
+    ]
+  },
+  "specifications": {
+    "Material": "Bagasse & Kraft Fiber",
+    "Capacity Options": "500ml, 750ml, 1000ml",
+    "Compartments": "2, 3, or 4 sections",
+    "Temperature Range": "-20°C to 120°C",
+    "Microwave Safe": "Yes (up to 2 minutes)",
+    "Freezer Safe": "Yes",
+    "Dimensions (L×W×H)": "22×15×5 cm",
+    "Weight": "25-35g per piece",
+    "Color": "Natural Brown",
+    "Certification": "ISO 9001, FDA Approved"
+  },
+  "sustainability": [
+    "Made from 100% agricultural waste",
+    "Biodegrades in 60-90 days",
+    "Zero plastic content",
+    "Carbon neutral production"
+  ],
+  "similarProducts": {
+    "categoryCount": "6",
+    "totalProducts": "50+",
+    "products": [
+      {
+        "name": "Bowls & Lids",
+        "price": "₹6.00 - ₹12.00",
+        "image": "images/BL.webp",
+        "link": "product-bowls-lids.html"
+      },
+      {
+        "name": "Meal Trays",
+        "price": "₹10.00 - ₹18.00",
+        "image": "images/mealtray.jpg",
+        "link": "product-meal-trays.html"
+      },
+      {
+        "name": "Cups & Sippers",
+        "price": "₹4.50 - ₹8.00",
+        "image": "images/coffee-cup.jpg",
+        "link": "product-cups-sippers.html"
+      },
+      {
+        "name": "Cutlery & Accessories",
+        "price": "₹2.00 - ₹5.00",
+        "image": "images/CA.jpg",
+        "link": "product-cutlery-accessories.html"
+      },
+      {
+        "name": "Custom Packaging",
+        "price": "₹15.00 - ₹35.00",
+        "image": "images/CP.jpg",
+        "link": "product-custom-packaging.html"
+      },
+      {
+        "name": "Pizza Boxes",
+        "price": "₹15.00 - ₹25.00",
+        "image": "images/Pizza.jpg",
+        "link": "product-pizza-boxes.html"
+      }
+    ]
+  }
+}
