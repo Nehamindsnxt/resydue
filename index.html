@@ -5,35 +5,14 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Resydue - Eco-Friendly Biodegradable Products</title>
     <link rel="icon" type="image/svg+xml" href="images/T4.svg">
+    <link rel="stylesheet" href="section-cards.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Products.css">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header class="animate-fadeIn">
-        <nav class="navbar">
-            <div class="brand">
-                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <a href="index.html"><img src="images/logo.png" alt="Resydue logo" class="logo"></a>
-            </div>
-            <ul class="nav-links animate-slideIn">
-                <li><a href="#home">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="#products">Products</a></li>
-                <!-- <li><a href="#calculator">Calculator</a></li> -->
-            </ul>
-            <div class="nav-right">
-                <!-- <div class="search-container">
-                    <input class="search-input" type="search" placeholder="Search products...">
-                    <i class="fas fa-search search-icon" aria-hidden="true"></i>
-                </div> -->
-                <!-- <i class="fas fa-shopping-cart cart-icon" aria-hidden="true"></i> -->
-                <a href="contact.html" class="btn">Contact</a>
-            </div>
-        </nav>
-    </header>
+    <div id="navbar-placeholder"></div>
 
     <main class="main-content">
         <section id="home" class="hero" style="background-image:url('images/hero-bg.jpg')">
@@ -50,97 +29,252 @@
             </div>
         </section>
 
+
+
+        <section id="about" class="about-company animate-fadeIn">
+            <div class="section-card">
+                <div class="about-company-content">
+                    <div class="about-company-text">
+                        <h2 class="heading scroll-animate about-heading">About the Company</h2>
+                        <p class="lead scroll-animate about-text" style="animation-delay: 0.2s;">Resydue transforms agricultural by-products into certified, high-performance food packaging. Founded by a farmer's son and father Mr Yashraj Patil, it is built on responsibility, care and long-term impact.</p>
+                        <p class="body-text scroll-animate about-text" style="animation-delay: 0.4s;">We deliver packaging that's toxin-free, microplastic-free and fully safe for food. Our products are made from agro pulp, bagasse, kraft fibre and other natural materials, designed for cafés, cloud kitchens, QSR chains and food brands that refuse to compromise on quality.</p>
+                        <div class="btn-container" style="text-align: left;">
+                            <!-- <a href="about.html" class="btn animate-scaleIn">Learn Our Story</a> -->
+                        </div>
+                    </div>
+                    <div class="about-company-image">
+                        <img src="images/sustainability.jpg" alt="Sustainable packaging solutions" class="eco-image scroll-animate about-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         
-        <section class="sustainability animate-fadeIn">
-            <div class="sustainability-content">
-                <div class="sustainability-text">
-                    <h2 class="heading animate-slideUp">Sustainability at Our Core</h2>
-                    <p class="lead animate-slideUp">At Resydue, sustainability isn't just a goal — it's the foundation of everything we do. As India's leading manufacturer and supplier of eco-friendly packaging materials, we are committed to creating innovative, high-quality packaging solutions that protect both your products and the planet.</p>
-                    <p class="body-text animate-slideUp">Through responsible sourcing, sustainable production processes, and continuous innovation, we strive to reduce environmental impact while empowering businesses to make greener choices. Together, let's package a better tomorrow.</p>
-                    <div class="btn-container" style="text-align: left;">
-                        <a href="about.html" class="btn animate-scaleIn">Learn Our Story</a>
-                    </div>
-                </div>
-                <div class="sustainability-image">
-                    <img src="images/sustainability.jpg" alt="Sustainable packaging solutions" class="eco-image animate-scaleIn">
-                </div>
-            </div>
-        </section>
-<section class="zero-waste animate-fadeIn">
-            <div class="zero-content">
-                <div class="zero-left animate-slideIn">
-                    <img src="images/zero-banner.jpg" alt="Eco product 100% recycled material" class="banner-image animate-scaleIn">
-                </div>
-
-                <div class="zero-right">
-                    <h2 class="heading animate-slideUp">Zero Waste Product</h2>
-                    <p class="body-text small-caption animate-slideUp">Sustainable choices, greener future.</p>
-                    <p class="body-text animate-slideUp">Sustainability guides every step we take. As a trusted provider of biodegradable and zero-waste products, we are dedicated to offering solutions that respect the planet while delivering unmatched quality. Our products are crafted from natural, eco-friendly materials designed to break down harmlessly, reducing pollution and supporting a cleaner environment. From everyday tableware to innovative packaging alternatives, we focus on creating compostable, reusable, and waste-free options that meet modern lifestyle and business needs. With a commitment to innovation and responsible manufacturing, we aim to inspire a future where sustainable choices are effortless and accessible for all.</p>
-                    <p class="website small-caption animate-slideUp">w.w.w.resydue.com</p>
-                </div>
-            </div>
-        </section>
+    
+        <!-- /Our Capabilities -->
+    
+        <!-- <section id="products" class="products animate-fadeIn">
+            <div class="section-card">
+                <div class=""> -->
         <section id="products" class="products animate-fadeIn">
-            <h2 class="heading animate-slideUp">Our Products</h2>
-            <p class="lead" style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">Explore packaging made from agro pulp, bagasse, kraft fibre and other natural materials, designed for cafés, cloud kitchens, QSR chains and food brands that refuse to compromise on quality.</p>
+      <div class="container" style="padding: 0; max-width: 1400px; margin: 0 auto;">
+        <div class="container">
+            <h2 class="internships-heading" style="font-weight: 700; color: var(--olive-shadow);">Our Products</h2>
+            <p class="lead" style="text-align: left; max-width: 800px; margin: 0 0 3rem;">Explore packaging made from agro pulp, bagasse, kraft fibre and other natural materials, designed for cafés, cloud kitchens, QSR chains and food brands that refuse to compromise on quality.</p>
 
-            <div class="products-grid">
-                <div class="product-image animate-popBounce">
-                    <img src="images/pizza-box.jpg" alt="Pizza box packaging" class="product-img">
+        </div>
+        <div style="position: relative;">
+          <div id="cap-carousel">
+            <div id="cap-cards">
+             <!-- Card 1 -->
+              <div class="cap-card" style="background-image: url(images/Bento.jpg);" onclick="window.location.href='product-bento-boxes.html'">
+                <div class="card-text-overlay">
+             <h3 class="subheading">Bento Boxes </h3>
+             <div class="product-card-details">
+               <span class="detail-badge quantity">Min. 100 pieces</span>
+               <span class="detail-badge size">6-compartment</span>
+               <span class="detail-price">₹12.50/piece</span>
+             </div>    
+            <p class="body-text">Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.</p>
                 </div>
-                <div class="product-info light-green animate-popSlide">
-                    <div class="category-item">
-                        <h3 class="subheading">Bento Boxes (Design)</h3>
-                        <p class="body-text">Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.</p>
-                    </div>
+              </div>
+               <!-- Card 2 -->
+              <div class="cap-card" style="background-image: url(images/coffee-cup.jpg);" onclick="window.location.href='product-cups-sippers.html'">
+                <div class="card-text-overlay">
+                  <h3>Cups & Sippers</h3>
+                  <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 500 pieces</span>
+                    <span class="detail-badge size">6oz, 8oz, 10oz</span>
+                    <span class="detail-price">₹2.50-5.00/piece</span>
+                  </div>
+                  <p class="body-text">Kraft-based and coated beverage containers with safe linings and custom branding options.</p>
                 </div>
-
-                <div class="product-image animate-popZoom">
-                    <img src="images/burger-box.jpg" alt="Eco-friendly burger box" class="product-img">
+              </div>
+              <!-- Card 3 -->
+              <div class="cap-card" style="background-image: url(images/burger-box.jpg);" onclick="window.location.href='product-burger-boxes.html'">
+                <div class="card-text-overlay card-text-overlay2">
+                  <h3>Burger Boxes</h3>
+                  <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 200 pieces</span>
+                    <span class="detail-badge size">Standard Size</span>
+                    <span class="detail-price">₹8.50-12.00/piece</span>
+                  </div>
+                <p class="body-text">Sturdy, moisture-wicking, and easy-to-handle clamshells designed to keep buns soft and prevent structural collapse.</p>
                 </div>
-
-                <div class="product-info light-green animate-popSpin">
-                    <div class="category-item">
-                        <h3 class="subheading">Bowls & Lids</h3>
-                        <p class="body-text">Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.</p>
-                    </div>
-                </div>
-                
-                <div class="product-image animate-popFlip">
-                    <img src="images/coffee-cup.jpg" alt="Sustainable coffee cup" class="product-img">
-                </div>
-                
-                <div class="product-info light-green animate-popWave">
-                    <div class="category-item">
-                        <h3 class="subheading">Meal Trays</h3>
+              </div>
+              <!-- Card 4 -->
+              <div class="cap-card" style="background-image: url(images/mealtray.jpg);" onclick="window.location.href='product-meal-trays.html'">
+                <div class="card-text-overlay">
+                  <h3>Meal Trays</h3>
+                  <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 100 pieces</span>
+                    <span class="detail-badge size">3 & 5-compartment</span>
+                    <span class="detail-price">₹15.00-18.50/piece</span>
+                  </div>
                         <p class="body-text">Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.</p>
+                </div>
+              </div>
+              <!-- Card 5 -->
+              <div class="cap-card" style="background-image: url(images/CA.jpg);" onclick="window.location.href='product-cutlery-accessories.html'">
+                <div class="card-text-overlay card-text-overlay4">
+                  <h3>Cutlery & Accessories</h3>
+                  <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 500 pieces</span>
+                    <span class="detail-badge size">6oz, 8oz, 10oz</span>
+                    <span class="detail-price">₹2.50-5.00/piece</span>
+                  </div>
+                        <p class="body-text">Tree-free forks, spoons, stirrers and trays designed for durability without plastic.</p>
+                </div>
+              </div>
+              <!-- Card 6 -->
+              <div class="cap-card" style="background-image: url(images/CP.jpg);" onclick="window.location.href='product-custom-packaging.html'">
+                <div class="card-text-overlay card-text-overlay5">
+                 <h3>Custom Packaging</h3>
+                 <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 500 pieces</span>
+                    <span class="detail-badge size">6oz, 8oz, 10oz</span>
+                    <span class="detail-price">₹2.50-5.00/piece</span>
+                  </div>
+                 <p class="body-text">Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.</p>
+                </div>
+              </div>
+              <!-- Card 7 -->
+              <div class="cap-card" style="background-image: url(images/Pizza.jpg);" onclick="window.location.href='product-pizza-boxes.html'">
+                <div class="card-text-overlay card-text-overlay6">
+                  <h3>Pizza Boxes</h3>
+                  <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 500 pieces</span>
+                    <span class="detail-badge size">6oz, 8oz, 10oz</span>
+                    <span class="detail-price">₹2.50-5.00/piece</span>
+                  </div>
+                  <p>Ventilated, crush-resistant, and grease-proof designs that maintain crust crispness and retain heat during transit..</p>
+                </div>
+              </div>
+              <!-- Card 8 -->
+              <div class="cap-card" style="background-image: url(images/BL.webp);" onclick="window.location.href='product-bowls-lids.html'">
+                <div class="card-text-overlay card-text-overlay7">
+                  <h3>Bowls & Lids</h3>
+                  <div class="product-card-details">
+                    <span class="detail-badge quantity">Min. 500 pieces</span>
+                    <span class="detail-badge size">6oz, 8oz, 10oz</span>
+                    <span class="detail-price">₹2.50-5.00/piece</span>
+                  </div>
+                  <p>Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.</p>
+                </div>
+              </div>
+                  <!-- Card 9 -->
+              <!-- <div class="cap-card" style="background-image: url(assets/img/new/cap/image-8.png);">
+                <div class="card-text-overlay card-text-overlay8">
+                   <h3>Product / Project Management</h3>
+                  <p>Driving projects from concept to delivery with agile methodologies, ensuring timely execution and measurable outcomes.</p>                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <div class="cap-nav-container">
+          <button id="cap-prev" class="cap-nav-btn"><span>&larr;</span></button>
+          <button id="cap-next" class="cap-nav-btn"><span>&rarr;</span></button>
+        </div>
+      </div>
+ 
+    </section><!-- /Our Capabilities -->
+        
+        <!-- Product Categories Section -->
+        <section class="product-categories animate-fadeIn">
+            <div class="section-card">
+                <div class="features-content">
+                    <h2 class="heading animate-slideUp">Product Categories</h2>
+                    <p class="lead animate-slideUp">Discover our specialized packaging solutions tailored for different business types</p>
+                    <div class="category-grid">
+                        <div class="category-card animate-scaleIn" onclick="showSubCategories('hotels')">
+                            <div class="category-icon">
+                                <i class="fas fa-hotel"></i>
+                            </div>
+                            <h3 class="subheading">Hotels</h3>
+                            <p class="body-text">Premium packaging solutions for hotel dining, room service, and catering needs</p>
+                            <!-- <div class="category-products">
+                                <span class="product-tag">Containers</span>
+                                <span class="product-tag">Cutlery</span>
+                                <span class="product-tag">Tableware</span>
+                            </div> -->
+                        </div>
+                        <div class="category-card animate-scaleIn" onclick="showSubCategories('restaurants')">
+                            <div class="category-icon">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3 class="subheading">Restaurants</h3>
+                            <p class="body-text">Durable and elegant packaging for fine dining and takeaway services</p>
+                            <!-- <div class="category-products">
+                                <span class="product-tag">Containers</span>
+                                <span class="product-tag">Cutlery</span>
+                                <span class="product-tag">Tableware</span>
+                            </div> -->
+                        </div>
+                        <div class="category-card animate-scaleIn" onclick="showSubCategories('cafes')">
+                            <div class="category-icon">
+                                <i class="fas fa-coffee"></i>
+                            </div>
+                            <h3 class="subheading">Cafes</h3>
+                            <p class="body-text">Stylish and sustainable packaging perfect for coffee shops and casual dining</p>
+                            <!-- <div class="category-products">
+                                <span class="product-tag">Containers</span>
+                                <span class="product-tag">Cutlery</span>
+                                <span class="product-tag">Tableware</span>
+                            </div> -->
+                        </div>
+                        <div class="category-card animate-scaleIn" onclick="showSubCategories('cloud-kitchens')">
+                            <div class="category-icon">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3 class="subheading">Cloud Kitchens</h3>
+                            <p class="body-text">Efficient delivery-focused packaging designed for online food businesses</p>
+                            <!-- <div class="category-products">
+                                <span class="product-tag">Containers</span>
+                                <span class="product-tag">Cutlery</span>
+                                <span class="product-tag">Tableware</span>
+                            </div> -->
+                        </div>
+                    </div>
+                    
+                    <!-- Sub-categories container -->
+                    <div id="sub-categories" class="sub-categories-container hidden">
+                        <div class="breadcrumb-container">
+                            <nav class="breadcrumb">
+                                <span class="breadcrumb-item" onclick="hideSubCategories()">Product Categories</span>
+                                <span class="breadcrumb-separator">></span>
+                                <span id="current-category" class="breadcrumb-item active"></span>
+                            </nav>
+                        </div>
+                        <div id="sub-categories-content" class="sub-categories-content">
+                            <!-- Dynamic content will be inserted here -->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="products-footer">
-                <a href="ourproducts.html" class="btn see-more-btn animate-scaleIn">See More</a>
             </div>
         </section>
-
         
 
         <section id="features" class="features animate-fadeIn">
-            <h2 class="heading animate-slideUp" style="animation-delay: 0.2s;">Why Choose Resydue?</h2>
-            <div class="feature-grid">
-                <div class="feature-card animate-scaleIn">
-                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
-                    <h3 class="subheading">100% Biodegradable</h3>
-                    <p class="body-text">All our products are completely biodegradable and eco-friendly.</p>
-                </div>
-                <div class="feature-card animate-scaleIn">
-                    <div class="feature-icon"><i class="fas fa-recycle"></i></div>
-                    <h3 class="subheading">Zero Waste</h3>
-                    <p class="body-text">Committed to reducing environmental impact through sustainable practices.</p>
-                </div>
-                <div class="feature-card animate-scaleIn">
-                    <div class="feature-icon"><i class="fas fa-heart"></i></div>
-                    <h3 class="subheading">Quality Design</h3>
-                    <p class="body-text">Beautiful, functional products that don't compromise on style.</p>
+            <div class="section-card">
+                <div class="features-content">
+                    <h2 class="heading animate-slideUp" style="animation-delay: 0.2s;">Why Choose Resydue?</h2>
+                    <div class="feature-grid">
+                        <div class="feature-card animate-scaleIn" style="animation-delay: 0.4s;">
+                            <div class="feature-icon"><i class="fas fa-leaf"></i></div>
+                            <h3 class="subheading">100% Biodegradable</h3>
+                            <p class="body-text">All our products are completely biodegradable and eco-friendly.</p>
+                        </div>
+                        <div class="feature-card animate-scaleIn" style="animation-delay: 0.6s;">
+                            <div class="feature-icon"><i class="fas fa-recycle"></i></div>
+                            <h3 class="subheading">Zero Waste</h3>
+                            <p class="body-text">Committed to reducing environmental impact through sustainable practices.</p>
+                        </div>
+                        <div class="feature-card animate-scaleIn" style="animation-delay: 0.8s;">
+                            <div class="feature-icon"><i class="fas fa-heart"></i></div>
+                            <h3 class="subheading">Quality Design</h3>
+                            <p class="body-text">Beautiful, functional products that don't compromise on style.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -159,80 +293,1034 @@
         </,section> -->
 
          <section class="impact">
-            <div class="impact-content">
-                <div class="impact-text">
-                    <h2 class="heading">Making a Difference</h2>
-                    <div class="impact-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">1M+</span>
-                            <span class="stat-label">Plastic Bags Eliminated</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Business Partners</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100%</span>
-                            <span class="stat-label">Biodegradable Products</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">20,000+</span>
-                            <span class="stat-label">Waste Diverted</span>
+            <div class="section-card">
+                <div class="impact-content">
+                    <div class="impact-text">
+                        <h2 class="heading">Making a Difference</h2>
+                        <div class="impact-stats">
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="1000000">0</span>
+                                <span class="stat-label">Plastic Bags Eliminated</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="500">0</span>
+                                <span class="stat-label">Business Partners</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="100">0</span>
+                                <span class="stat-label">Biodegradable Products</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number" data-target="20000">0</span>
+                                <span class="stat-label">Waste Diverted</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="impact-image">
-                    <img src="images/impact.jpg" alt="Environmental impact" class="eco-image">
+                    <div class="impact-image">
+                        <img src="images/impact.jpg" alt="Environmental impact" class="eco-image">
+                    </div>
                 </div>
             </div>
         </section>
 
         <section class="process animate-fadeIn">
-            <h2 class="heading animate-slideUp">Our Sustainable Process</h2>
-            <div class="process-grid">
-                <div class="process-item animate-scaleIn">
-                    <img src="images/production.jpg" alt="Responsible sourcing" class="process-image">
-                    <h3 class="subheading">Responsible Sourcing</h3>
-                    <p class="body-text">We carefully select eco-friendly raw materials from sustainable sources.</p>
-                </div>
-                <div class="process-item animate-scaleIn">
-                    <img src="images/sourcing.jpg" alt="Sustainable production" class="process-image">
-                    <h3 class="subheading">Green Production</h3>
-                    <p class="body-text">Our manufacturing process minimizes waste and energy consumption.</p>
-                </div>
-                <div class="process-item animate-scaleIn">
-                    <img src="images/innovation.jpg" alt="Continuous innovation" class="process-image">
-                    <h3 class="subheading">Innovation</h3>
-                    <p class="body-text">Constantly developing new eco-friendly packaging solutions.</p>
+            <div class="section-card">
+                <div class="features-content">
+                <h2 class="heading animate-slideUp">Our Sustainable Process</h2>
+                <div class="process-grid">
+                    <div class="process-item animate-scaleIn">
+                        <img src="images/production.jpg" alt="Responsible sourcing" class="process-image">
+                        <h3 class="subheading">Responsible Sourcing</h3>
+                        <p class="body-text">We carefully select eco-friendly raw materials from sustainable sources.</p>
+                    </div>
+                    <div class="process-item animate-scaleIn">
+                        <img src="images/sourcing.jpg" alt="Sustainable production" class="process-image">
+                        <h3 class="subheading">Green Production</h3>
+                        <p class="body-text">Our manufacturing process minimizes waste and energy consumption.</p>
+                    </div>
+                    <div class="process-item animate-scaleIn">
+                        <img src="images/innovation.jpg" alt="Continuous innovation" class="process-image">
+                        <h3 class="subheading">Innovation</h3>
+                        <p class="body-text">Constantly developing new eco-friendly packaging solutions.</p>
+                    </div>
                 </div>
             </div>
+            </div>
         </section>
-        <section class="brand-story animate-fadeIn">
+        <!-- <section class="brand-story animate-fadeIn">
+            <div class="section-card">
+                <div class="features-content">
+                <h2 class="heading">Resydue Brand Story</h2>
             <div class="brand-story-content">
                 <div class="brand-image animate-scaleIn">
-                    <!-- Replace 'cleanup.jpg' with the actual image filename you uploaded -->
                     <img src="images/cleanup.jpg" alt="Community cleanup" class="brand-img">
                 </div>
 
                 <div class="brand-text animate-slideUp">
-                    <h2 class="heading">Resydue Brand Story</h2>
                     <p class="body-text">We’ve all used products without thinking about where they come from or where they end up. For years, we ignored the hidden toxins and accepted harmful materials as “normal.” I was the same—until one day I finally asked myself: Why are we using products that harm us and the planet? Why are we creating waste that lasts longer than we do?</p>
                     <p class="body-text">Hi, this is Yashraj Patil, and that moment of clarity led to Resydue—a brand dedicated to sustainable, zero-waste living. Our biodegradable products return to the earth naturally, making eco-friendly choices simple for everyone.</p>
                     <a href="about.html" class="btn read-more-btn">Read More</a>
                 </div>
             </div>
-        </section>
+            </div>
+            </div>
+        </section> -->
 
         <!-- Tools CTA Section -->
         <section class="product-cta animate-fadeIn">
-            <div class="product-cta-content">
-                <h2 class="heading">Interactive Tools & Features</h2>
+            <div class="section-card">
+                <div class="features-content">
+                <div class="product-cta-content">
+                <h2 class="heading">Product White-Label</h2>
                 <p class="lead">Explore our innovative tools designed to help you make better packaging decisions</p>
                 <div class="product-cta-button">
-                    <a href="tools.html" class="btn-cta">Explore Tools</a>
+                    <!-- <a href="tools.html" class="btn-cta">Explore Tools</a> -->
+                     <div style= "background-color: E2CBA2" class ="tool-item animate-scaleIn">
+                        <h3 class="subheading">Custom Product Preview</h3>
+                        <p class="body-text">Upload your logo and instantly preview how it looks across multiple product shapes and materials.</p>
+                        <button class="tool-btn" onclick="showSelectionPopup()">Upload Logo</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+            <!-- Selection Popup -->
+    <div id="selectionOverlay" class="selection-overlay hidden" onclick="hideSelectionPopup()"></div>
+    <div id="selectionPopup" class="selection-popup hidden">
+        <h3>Choose Action</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Select an option to get started with your logo customization. Upload a new logo or preview your existing logo on our eco-friendly packaging products.</p>
+        <div class="selection-buttons">
+            <button class="gallery-btn" onclick="hideSelectionPopup(); showUploadPopup();">Upload Image</button>
+            <button class="gallery-btn" onclick="hideSelectionPopup(); showGalleryPopup();">Preview Products</button>
+        </div>
+    </div>
+
+    <!-- Gallery Popup -->
+    <div id="galleryOverlay" class="gallery-overlay hidden"></div>
+    <div id="galleryPopup" class="gallery-popup hidden">
+        <button class="close-btn" onclick="hideGalleryPopup()">×</button>
+        <h3 style="margin-bottom: 0.5rem;">Product Preview</h3>
+        <!-- <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Preview your uploaded logo on our eco-friendly packaging products. Use the controls below to adjust logo size, rotation, and drag to reposition. Navigate through different product types using the arrow buttons.</p> -->
+        <div class="gallery-content">
+            <img id="galleryImage" src="" alt="Gallery Image">
+        </div>
+        <div class="controls-section">
+            <div class="logo-controls">
+                <div class="control-row">
+                    <label>Size: </label>
+                    <input type="range" id="logoSize" min="30" max="200" value="80" oninput="updateSizeInput(); applySliderChanges()">
+                    <input type="number" id="sizeInput" min="30" max="200" value="80" style="width: 60px; margin-left: 10px;" oninput="updateSizeSlider()" disabled>
+                    <span>px</span>
+                </div>
+                <div class="control-row">
+                    <label>Rotate: </label>
+                    <input type="range" id="logoRotate" min="0" max="360" value="0" oninput="updateRotateInput(); applySliderChanges()">
+                    <input type="number" id="rotateInput" min="0" max="360" value="0" style="width: 60px; margin-left: 10px;" oninput="updateRotateSlider()" disabled>
+                    <span>°</span>
+                </div>
+                <div class="control-row" style="justify-content: center;">
+                    <button id="editApplyBtn" onclick="toggleEditMode()" style="background: var(--warm-gold); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; margin-right: 10px; font-weight: 600; transition: all 0.3s ease;">Edit</button>
+                    <button onclick="resetLogo()" style="background: var(--olive-shadow); color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-weight: 600; transition: all 0.3s ease;">Reset</button>
+                </div>
+            </div>
+            <div class="gallery-nav">
+                <button onclick="prevImage()">‹</button>
+                <span id="imageCounter">1 / 1</span>
+                <button onclick="nextImage()">›</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Modal -->
+    <div id="uploadOverlay" class="upload-overlay hidden" onclick="hideUploadPopup()"></div>
+    <div id="uploadPopup" class="upload-popup hidden">
+        <h3>Upload Your Logo</h3>
+        <p style="color: #666; font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.4;">Upload your company logo to see how it looks on our eco-friendly packaging products. Supported formats: JPG, PNG, GIF. After uploading, you can preview your logo on different products using product preview option.</p>
+        <input type="file" id="logoInput" accept="image/*" onchange="handleLogoUpload(event)">
+        <div id="logoPreview"></div>
+        <div id="uploadButtons" class="hidden">
+            <button class="upload-btn" onclick="uploadLogo()">Upload</button>
+            <button class="cancel-btn" onclick="hideUploadPopup()">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Success Notification -->
+    <div id="successNotification" class="success-notification hidden">
+        <div class="success-icon">✓</div>
+        <div class="success-text">Logo uploaded successfully!</div>
+    </div>
+
+    <!-- Success Popup -->
+    <div id="successOverlay" class="upload-overlay hidden" onclick="hideSuccessPopup()"></div>
+    <div id="successPopup" class="success-popup hidden">
+        <h3>Upload Success</h3>
+        <p id="successMessage"></p>
+        <div style="margin-top: 20px;">
+            <button onclick="goToProductPreview()" style="margin-right: 10px;">Preview Products</button>
+            <button onclick="hideSuccessPopup()">OK</button>
+        </div>
+    </div>
+
+    <!-- Error Popup -->
+    <div id="errorOverlay" class="upload-overlay hidden" onclick="hideErrorPopup()"></div>
+    <div id="errorPopup" class="error-popup hidden">
+        <h3>Upload Error</h3>
+        <p id="errorMessage"></p>
+        <button onclick="hideErrorPopup()">OK</button>
+    </div>
+</div>
+</section>
+    <style>
+        .selection-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 999;
+        }
+        .selection-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            z-index: 1000;
+            text-align: center;
+        }
+        .selection-buttons {
+            margin-top: 20px;
+        }
+        .gallery-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .gallery-btn:hover {
+            background: #b6762f;
+            transform: translateY(-1px);
+        }
+        .gallery-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 1000;
+        }
+        .gallery-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            z-index: 1001;
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: auto;
+            text-align: center;
+        }
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .gallery-content {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 475px;
+            max-height: 400px;
+            margin: 0 auto;
+        }
+        .gallery-content img {
+            width: 100%;
+            height: 400px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .logo-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            height: 80px;
+            cursor: move;
+            z-index: 10;
+        }
+        .logo-overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        .controls-section {
+            margin-top: 20px;
+        }
+        .logo-controls {
+            background: rgba(255,255,255,0.9);
+            padding: 15px;
+            border-radius: 4px;
+            color: black;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+        .control-row {
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .control-row label {
+            min-width: 60px;
+        }
+        .control-row input {
+            flex: 1;
+        }
+        .gallery-nav {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .gallery-nav button {
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            padding: 5px 15px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .gallery-nav button:hover {
+            background: #b6762f;
+            transform: translateY(-1px);
+        }
+        .hidden {
+            display: none;
+        }
+        .upload-overlay {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            background: rgba(0,0,0,0.5) !important;
+            z-index: 99999 !important;
+        }
+        .upload-popup {
+            position: fixed !important;
+            top: 50% !important;
+            left: 50% !important;
+            transform: translate(-50%, -50%) !important;
+            background: white !important;
+            padding: 30px !important;
+            border-radius: 8px !important;
+            z-index: 100000 !important;
+            text-align: center !important;
+            min-width: 300px !important;
+        }
+        .error-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            z-index: 100001;
+            text-align: center;
+            min-width: 300px;
+            border: 2px solid #dc3545;
+        }
+        .error-popup h3 {
+            color: #dc3545;
+            margin-bottom: 15px;
+        }
+        .error-popup button {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .success-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #28a745;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            z-index: 100002;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .success-icon {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .success-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            z-index: 100001;
+            text-align: center;
+            min-width: 300px;
+            border: 2px solid #28a745;
+        }
+        .success-popup h3 {
+            color: #28a745;
+            margin-bottom: 15px;
+        }
+        .success-popup button {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+    <script src="script.js"></script>
+    <script>
+        let selectedLogo = null;
+
+        function showUploadPopup() {
+            document.getElementById('uploadOverlay').classList.remove('hidden');
+            document.getElementById('uploadPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+            showLastUploadedLogo();
+        }
+
+        function showLastUploadedLogo() {
+            const lastLogo = localStorage.getItem('customLogo');
+            if (lastLogo) {
+                const preview = document.getElementById('logoPreview');
+                preview.innerHTML = `<img src="${lastLogo}" alt="Current logo" style="max-width: 200px; max-height: 200px; border: 1px solid #ddd; border-radius: 4px;">`;
+            }
+        }
+
+        function hideUploadPopup() {
+            document.getElementById('uploadOverlay').classList.add('hidden');
+            document.getElementById('uploadPopup').classList.add('hidden');
+            document.getElementById('logoInput').value = '';
+            document.getElementById('logoPreview').innerHTML = '';
+            document.getElementById('uploadButtons').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+            selectedLogo = null;
+        }
+
+        function handleLogoUpload(event) {
+            selectedLogo = event.target.files[0];
+            if (selectedLogo) {
+                // Validate file type
+                const allowedTypes = ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'];
+                if (!allowedTypes.includes(selectedLogo.type)) {
+                    showErrorPopup('Please select a valid image file (JPG, PNG, or GIF)');
+                    event.target.value = '';
+                    return;
+                }
+                
+                const preview = document.getElementById('logoPreview');
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = new Image();
+                    img.onload = function() {
+                        preview.innerHTML = `<img src="${e.target.result}" alt="Logo Preview" style="max-width: 200px; max-height: 200px; border: 1px solid #ddd; border-radius: 4px;">`;
+                    };
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(selectedLogo);
+                document.getElementById('uploadButtons').classList.remove('hidden');
+            }
+        }
+
+        function uploadLogo() {
+            if (selectedLogo) {
+                try {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        try {
+                            const logoData = e.target.result;
+                            localStorage.setItem('customLogo', logoData);
+                            loadGalleryImages();
+                            showSuccessNotification();
+                            hideUploadPopup();
+                        } catch (error) {
+                            showErrorPopup('Failed to save logo. Please try again.');
+                        }
+                    };
+                    reader.onerror = function() {
+                        showErrorPopup('Failed to read file. Please try again.');
+                    };
+                    reader.readAsDataURL(selectedLogo);
+                } catch (error) {
+                    showErrorPopup('Upload failed. Please try again.');
+                }
+            } else {
+                showErrorPopup('No file selected. Please select a file first.');
+            }
+        }
+        
+        function showSuccessNotification() {
+            showSuccessPopup('Logo uploaded successfully!');
+        }
+        
+        function showSuccessPopup(message) {
+            document.getElementById('successMessage').textContent = message;
+            document.getElementById('successOverlay').classList.remove('hidden');
+            document.getElementById('successPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideSuccessPopup() {
+            document.getElementById('successOverlay').classList.add('hidden');
+            document.getElementById('successPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function goToProductPreview() {
+            hideSuccessPopup();
+            showGalleryPopup();
+        }
+        
+        function showErrorPopup(message) {
+            document.getElementById('errorMessage').textContent = message;
+            document.getElementById('errorOverlay').classList.remove('hidden');
+            document.getElementById('errorPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideErrorPopup() {
+            document.getElementById('errorOverlay').classList.add('hidden');
+            document.getElementById('errorPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        let galleryImages = [];
+        let currentImageIndex = 0;
+        
+        function loadGalleryImages() {
+            const images = ['Bento.jpg', 'coffee-cup.jpg', 'burger-box.jpg', 'mealtray.jpg', 'CA.jpg', 'CP.jpg', 'Pizza.jpg', 'BL.webp'];
+            galleryImages = [];
+            
+            images.forEach(img => {
+                galleryImages.push(`images/${img}`);
+            });
+        }
+        
+        function showGalleryPopup() {
+            loadGalleryImages();
+            if (galleryImages.length > 0) {
+                currentImageIndex = 0;
+                document.getElementById('galleryOverlay').classList.remove('hidden');
+                document.getElementById('galleryPopup').classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+                updateGalleryImage();
+            }
+        }
+        
+        function hideGalleryPopup() {
+            document.getElementById('galleryOverlay').classList.add('hidden');
+            document.getElementById('galleryPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function updateGalleryImage() {
+            document.getElementById('galleryImage').src = galleryImages[currentImageIndex];
+            document.getElementById('imageCounter').textContent = `${currentImageIndex + 1} / ${galleryImages.length}`;
+            
+            // Add logo overlay if exists
+            const savedLogo = localStorage.getItem('customLogo');
+            const existingOverlay = document.querySelector('.logo-overlay');
+            if (existingOverlay) existingOverlay.remove();
+            
+            if (savedLogo) {
+                const overlay = document.createElement('div');
+                overlay.className = 'logo-overlay';
+                overlay.id = 'logoOverlay';
+                overlay.innerHTML = `<img src="${savedLogo}" alt="Logo">`;
+                
+                // Apply current size and rotation settings
+                const currentSize = document.getElementById('logoSize').value;
+                const currentRotation = document.getElementById('logoRotate').value;
+                document.getElementById('sizeInput').value = currentSize;
+                document.getElementById('rotateInput').value = currentRotation;
+                overlay.style.width = currentSize + 'px';
+                overlay.style.height = currentSize + 'px';
+                overlay.style.transform = `rotate(${currentRotation}deg)`;
+                
+                let isDragging = false;
+                
+                function startDrag(e) {
+                    isDragging = true;
+                    e.preventDefault();
+                }
+                
+                function drag(e) {
+                    if (isDragging) {
+                        const rect = document.querySelector('.gallery-content').getBoundingClientRect();
+                        const clientX = e.clientX || e.touches[0].clientX;
+                        const clientY = e.clientY || e.touches[0].clientY;
+                        overlay.style.left = (clientX - rect.left - 40) + 'px';
+                        overlay.style.top = (clientY - rect.top - 40) + 'px';
+                    }
+                }
+                
+                function endDrag() {
+                    isDragging = false;
+                }
+                
+                // Mouse events
+                overlay.onmousedown = startDrag;
+                document.onmousemove = drag;
+                document.onmouseup = endDrag;
+                
+                // Touch events for mobile
+                overlay.ontouchstart = startDrag;
+                document.ontouchmove = drag;
+                document.ontouchend = endDrag;
+                document.querySelector('.gallery-content').appendChild(overlay);
+            }
+        }
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+            updateGalleryImage();
+        }
+        
+        function prevImage() {
+            currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+            updateGalleryImage();
+        }
+        
+        function updateSizeInput() {
+            document.getElementById('sizeInput').value = document.getElementById('logoSize').value;
+        }
+        
+        function updateSizeSlider() {
+            document.getElementById('logoSize').value = document.getElementById('sizeInput').value;
+        }
+        
+        function updateRotateInput() {
+            document.getElementById('rotateInput').value = document.getElementById('logoRotate').value;
+        }
+        
+        function updateRotateSlider() {
+            document.getElementById('logoRotate').value = document.getElementById('rotateInput').value;
+        }
+        
+        function applySliderChanges() {
+            const size = document.getElementById('logoSize').value;
+            const rotation = document.getElementById('logoRotate').value;
+            const overlay = document.getElementById('logoOverlay');
+            if (overlay) {
+                overlay.style.width = size + 'px';
+                overlay.style.height = size + 'px';
+                overlay.style.transform = `rotate(${rotation}deg)`;
+            }
+        }
+        
+        let isEditMode = false;
+        
+        function toggleEditMode() {
+            const btn = document.getElementById('editApplyBtn');
+            const sizeInput = document.getElementById('sizeInput');
+            const rotateInput = document.getElementById('rotateInput');
+            
+            if (!isEditMode) {
+                // Enable edit mode
+                sizeInput.disabled = false;
+                rotateInput.disabled = false;
+                btn.textContent = 'Apply';
+                btn.style.background = 'var(--olive-shadow)';
+                isEditMode = true;
+            } else {
+                // Apply changes and disable edit mode
+                const size = sizeInput.value;
+                const rotation = rotateInput.value;
+                document.getElementById('logoSize').value = size;
+                document.getElementById('logoRotate').value = rotation;
+                const overlay = document.getElementById('logoOverlay');
+                if (overlay) {
+                    overlay.style.width = size + 'px';
+                    overlay.style.height = size + 'px';
+                    overlay.style.transform = `rotate(${rotation}deg)`;
+                }
+                sizeInput.disabled = true;
+                rotateInput.disabled = true;
+                btn.textContent = 'Edit';
+                btn.style.background = 'var(--warm-gold)';
+                isEditMode = false;
+            }
+        }
+        
+        function resetLogo() {
+            document.getElementById('logoSize').value = 80;
+            document.getElementById('logoRotate').value = 0;
+            document.getElementById('sizeInput').value = 80;
+            document.getElementById('rotateInput').value = 0;
+            const overlay = document.getElementById('logoOverlay');
+            if (overlay) {
+                overlay.style.width = '80px';
+                overlay.style.height = '80px';
+                overlay.style.transform = 'rotate(0deg)';
+                overlay.style.left = '20px';
+                overlay.style.top = '20px';
+            }
+            // Reset edit mode
+            const btn = document.getElementById('editApplyBtn');
+            const sizeInput = document.getElementById('sizeInput');
+            const rotateInput = document.getElementById('rotateInput');
+            sizeInput.disabled = true;
+            rotateInput.disabled = true;
+            btn.textContent = 'Edit';
+            btn.style.background = 'var(--warm-gold)';
+            isEditMode = false;
+        }
+        
+        function showSelectionPopup() {
+            document.getElementById('selectionOverlay').classList.remove('hidden');
+            document.getElementById('selectionPopup').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function hideSelectionPopup() {
+            document.getElementById('selectionOverlay').classList.add('hidden');
+            document.getElementById('selectionPopup').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Load gallery images on page load
+        window.addEventListener('load', function() {
+            loadGalleryImages();
+        });
+        
+        // Product Categories Sub-categories functionality
+        const subCategoriesData = {
+            'hotels': {
+                title: 'Hotels - Premium Packaging Solutions',
+                description: 'Elegant and durable packaging for luxury hotel dining experiences',
+                subcategories: [
+                    {
+                        name: 'Premium Containers',
+                        image: 'Bento.jpg',
+                        minOrder: '50',
+                        sizes: 'Multiple sizes',
+                        priceRange: '15.00-25.00',
+                        description: 'Luxury containers for room service, banquet dining, and premium catering needs.'
+                    },
+                    {
+                        name: 'Hotel Cutlery',
+                        image: 'CA.jpg',
+                        minOrder: '200',
+                        sizes: 'Premium sets',
+                        priceRange: '3.00-8.00',
+                        description: 'Elegant wooden and bamboo cutlery sets designed for upscale hotel dining.'
+                    }
+                ]
+            },
+            'restaurants': {
+                title: 'Restaurants - Fine Dining & Takeaway',
+                description: 'Professional packaging solutions for restaurant operations',
+                subcategories: [
+                    {
+                        name: 'Restaurant Containers',
+                        image: 'burger-box.jpg',
+                        minOrder: '100',
+                        sizes: 'Standard & Large',
+                        priceRange: '8.50-15.00',
+                        description: 'Durable takeaway boxes and food storage containers for restaurant use.'
+                    },
+                    {
+                        name: 'Professional Cutlery',
+                        image: 'CA.jpg',
+                        minOrder: '300',
+                        sizes: 'Complete sets',
+                        priceRange: '2.50-6.00',
+                        description: 'Restaurant-grade cutlery including serving spoons and specialty utensils.'
+                    }
+                ]
+            },
+            'cafes': {
+                title: 'Cafes - Coffee Shop Essentials',
+                description: 'Stylish and sustainable packaging for coffee culture',
+                subcategories: [
+                    {
+                        name: 'Cafe Containers',
+                        image: 'coffee-cup.jpg',
+                        minOrder: '200',
+                        sizes: '6oz, 8oz, 12oz',
+                        priceRange: '3.00-7.00',
+                        description: 'Coffee cups, pastry boxes, and sandwich containers perfect for cafe environments.'
+                    },
+                    {
+                        name: 'Coffee Accessories',
+                        image: 'CA.jpg',
+                        minOrder: '500',
+                        sizes: 'Small items',
+                        priceRange: '1.50-4.00',
+                        description: 'Coffee stirrers, dessert spoons, and specialty cafe utensils.'
+                    }
+                ]
+            },
+            'cloud-kitchens': {
+                title: 'Cloud Kitchens - Delivery Optimized',
+                description: 'Efficient packaging designed for online food delivery',
+                subcategories: [
+                    {
+                        name: 'Delivery Containers',
+                        image: 'Pizza.jpg',
+                        minOrder: '150',
+                        sizes: 'Delivery optimized',
+                        priceRange: '10.00-18.00',
+                        description: 'Leak-proof, insulated containers designed specifically for food delivery services.'
+                    },
+                    {
+                        name: 'Delivery Cutlery',
+                        image: 'CA.jpg',
+                        minOrder: '400',
+                        sizes: 'Wrapped sets',
+                        priceRange: '2.00-5.00',
+                        description: 'Individually wrapped cutlery packs perfect for delivery orders.'
+                    }
+                ]
+            }
+        };
+        
+        function showSubCategories(category) {
+            const data = subCategoriesData[category];
+            if (!data) return;
+            
+            const categoryGrid = document.querySelector('.category-grid');
+            const subCategoriesContainer = document.getElementById('sub-categories');
+            const subCategoriesContent = document.getElementById('sub-categories-content');
+            const currentCategorySpan = document.getElementById('current-category');
+            
+            // Update breadcrumb
+            const categoryNames = {
+                'hotels': 'Hotels',
+                'restaurants': 'Restaurants', 
+                'cafes': 'Cafes',
+                'cloud-kitchens': 'Cloud Kitchens'
+            };
+            currentCategorySpan.textContent = categoryNames[category];
+            
+            // Hide main categories
+            categoryGrid.style.display = 'none';
+            
+            // Generate sub-categories HTML
+            let html = `
+                <h3 class="sub-category-title">${data.title}</h3>
+                <p class="sub-category-description">${data.description}</p>
+                <div class="sub-category-carousel">
+                    <div class="sub-category-cards">
+            `;
+            
+            data.subcategories.forEach(subcat => {
+                html += `
+                    <div class="sub-cap-card" style="background-image: url(images/${subcat.image || 'default.jpg'});">
+                        <div class="card-text-overlay">
+                            <h3 class="subheading">${subcat.name}</h3>
+                            <div class="product-card-details">
+                                <span class="detail-badge quantity">Min. ${subcat.minOrder || '100'} pieces</span>
+                                <span class="detail-badge size">${subcat.sizes || 'Various sizes'}</span>
+                                <span class="detail-price">₹${subcat.priceRange || '5.00-15.00'}/piece</span>
+                            </div>
+                            <p class="body-text">${subcat.description}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                    <div class="sub-nav-container">
+                        <button id="sub-prev" class="sub-nav-btn"><span>&larr;</span></button>
+                        <button id="sub-next" class="sub-nav-btn"><span>&rarr;</span></button>
+                    </div>
+                </div>
+            `;
+            
+            subCategoriesContent.innerHTML = html;
+            subCategoriesContainer.classList.remove('hidden');
+            
+            // Initialize sub-category navigation
+            initSubCategoryNavigation();
+        }
+        
+        function initSubCategoryNavigation() {
+            const cards = document.querySelector('.sub-category-cards');
+            const subPrevBtn = document.getElementById('sub-prev');
+            const subNextBtn = document.getElementById('sub-next');
+            const navContainer = document.querySelector('.sub-nav-container');
+            
+            if (!cards || !subPrevBtn || !subNextBtn || !navContainer) return;
+            
+            const cardCount = cards.children.length;
+            
+            // Hide buttons if 2 or fewer cards
+            if (cardCount <= 2) {
+                navContainer.style.display = 'none';
+                return;
+            }
+            
+            // Show buttons for more than 2 cards
+            navContainer.style.display = 'flex';
+            
+            const cardsPerView = 1;
+            let current = 0;
+            
+            function updateSubCarousel() {
+                const containerWidth = cards.parentElement.offsetWidth;
+                const cardWidth = 350 + 32; // card width + gap
+                const max = Math.max(0, cardCount - cardsPerView);
+                
+                if (current < 0) current = 0;
+                if (current > max) current = max;
+                
+                cards.style.transform = `translateX(-${current * cardWidth}px)`;
+                
+                // Update button states
+                subPrevBtn.disabled = current === 0;
+                subNextBtn.disabled = current >= max;
+                subPrevBtn.style.opacity = current === 0 ? '0.5' : '1';
+                subNextBtn.style.opacity = current >= max ? '0.5' : '1';
+                subPrevBtn.style.cursor = current === 0 ? 'not-allowed' : 'pointer';
+                subNextBtn.style.cursor = current >= max ? 'not-allowed' : 'pointer';
+            }
+            
+            subPrevBtn.onclick = function(e) {
+                e.preventDefault();
+                current -= 1;
+                updateSubCarousel();
+            };
+            
+            subNextBtn.onclick = function(e) {
+                e.preventDefault();
+                current += 1;
+                updateSubCarousel();
+            };
+            
+            updateSubCarousel();
+        }
+        
+        function hideSubCategories() {
+            const categoryGrid = document.querySelector('.category-grid');
+            const subCategoriesContainer = document.getElementById('sub-categories');
+            
+            // Show main categories
+            categoryGrid.style.display = 'grid';
+            
+            // Hide sub-categories
+            subCategoriesContainer.classList.add('hidden');
+        }
+        
+        // Number animation function
+        function animateNumber(element, target, duration = 2000) {
+            const start = 0;
+            const increment = target / (duration / 16);
+            let current = start;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                
+                let displayValue;
+                const currentNum = Math.floor(current);
+                
+                if (target === 1000000) {
+                    if (currentNum >= 1000000) {
+                        displayValue = '1M+';
+                    } else {
+                        displayValue = Math.floor(currentNum / 100000) / 10 + 'M+';
+                    }
+                } else if (target === 100) {
+                    displayValue = currentNum + '%';
+                } else if (target >= 1000) {
+                    displayValue = currentNum.toLocaleString() + '+';
+                } else {
+                    displayValue = currentNum + '+';
+                }
+                
+                element.textContent = displayValue;
+            }, 16);
+        }
+        
+        // Intersection Observer for number animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(stat => {
+                        const text = stat.getAttribute('data-target');
+                        const target = parseInt(text.replace(/[^0-9]/g, ''));
+                        animateNumber(stat, target);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+        
+        // Observe the impact section
+        document.addEventListener('DOMContentLoaded', () => {
+            const impactSection = document.querySelector('.impact');
+            if (impactSection) {
+                observer.observe(impactSection);
+            }
+        });
+        
+        // Fullscreen image functionality
+        function openFullscreen(imageSrc) {
+            const fullscreenDiv = document.createElement('div');
+            fullscreenDiv.id = 'fullscreenImage';
+            fullscreenDiv.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:10000;display:flex;align-items:center;justify-content:center;cursor:pointer';
+            
+            const img = document.createElement('img');
+            img.src = imageSrc;
+            img.style.cssText = 'max-width:90%;max-height:90%;object-fit:contain';
+            
+            fullscreenDiv.appendChild(img);
+            fullscreenDiv.onclick = closeFullscreen;
+            document.body.appendChild(fullscreenDiv);
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeFullscreen() {
+            const fullscreenDiv = document.getElementById('fullscreenImage');
+            if (fullscreenDiv) {
+                fullscreenDiv.remove();
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
 
         <!-- Carbon Calculator Section -->
         <!-- <section id="calculator" class="calculator-section animate-fadeIn">
@@ -320,68 +1408,12 @@
     </main>
 
     <!-- Download Catalogue Button -->
-    <a href="#" class="download-catalogue-btn">
+    <!-- <a href="#" class="download-catalogue-btn">
         <i class="fas fa-download"></i>
         <span>Download Catalogue</span>
-    </a>
+    </a> -->
 
-    <footer class="site-footer">
-        <div class="footer-top">
-            <div class="footer-left">
-                <a href="index.html"><img src="images/logo.png" alt="Resydue" class="footer-logo"></a>
-            </div>
-            <div class="footer-center">
-                <p>Get connected with us on <strong>social networks:</strong></p>
-            </div>
-            <div class="footer-right">
-                <a href="#" class="social-circle" aria-label="facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com/resydue.pack?igsh=NjV6c3BwejA0bDgx" class="social-circle" aria-label="instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-circle" aria-label="linkedin"><i class="fab fa-linkedin-in"></i></a>
-            </div>
-        </div>
-
-        <div class="footer-columns">
-            <div class="footer-col">
-                <h3>Products</h3>
-                <ul>
-                    <li><a href="#">Eco-Friendly Plates</a></li>
-                    <li><a href="#">Sustainable Boxes</a></li>
-                    <li><a href="#">Biodegradable Cups</a></li>
-                    <li><a href="#">Natural Cutlery</a></li>
-                    <li><a href="#">Bamboo Brushes</a></li>
-                    <li><a href="#">Reusable Bags</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h3>Useful Links</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <!-- <li><a href="#calculator">Calculate</a></li> -->
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col contact-col">
-                <h3>Contact</h3>
-                <p><i class="fas fa-envelope"></i> <a href="mailto:Yash@resydue.com">Yash@resydue.com</a></p>
-                <p><i class="fas fa-phone"></i> <a href="tel:+919035766666">+91 90357 66666</a></p>
-                <p class="address"><i class="fas fa-map-marker-alt"></i> <a href="https://maps.google.com/?q=No.1-1165/1, Aiwan-E-Shahi, G.B court, Gulbarga pincode - 585102, Karnataka, India" target="_blank">No.1-1165/1, Aiwan-E-Shahi, G.B court,<br> Gulbarga pincode - 585102<br>State: Karnataka<br>Country: India</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p class="website">w.w.w.resydue.com</p>
-        </div>
-
-        <a class="whatsapp-fab" href="https://wa.me/919035766666" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
-    </footer>
-    <!-- Bottom Right Button -->
-    <button class="bottom-right-btn" onclick="scrollToTop()">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    <div id="footer-placeholder"></div>
 
     <script src="script.js"></script>
 </body>

@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Boxes - Resydue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body style="background: linear-gradient(135deg, #2d5016 0%, #3e6b1f 50%, #4a7c23 100%);">
+    <header>
+        <nav class="navbar">
+            <div class="brand">
+                <img src="images/logo.png" alt="Resydue Logo" class="logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#products">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="contact.html" class="btn">Get Quote</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <!-- Product Details Section -->
+        <section class="product-main">
+            <div class="product-container">
+                <!-- Left Side - Scrolling Images -->
+                <div class="product-images">
+                    <div class="image-gallery">
+                        <div class="main-image">
+                            <img id="mainImage" src="images/Bento.jpg" alt="Bento Boxes">
+                        </div>
+                        <div class="thumbnail-list">
+                            <img src="images/Bento.jpg" alt="Bento Box 1" class="thumbnail active" onclick="changeImage('images/Bento.jpg')">
+                            <img src="images/mealtray.jpg" alt="Bento Box 2" class="thumbnail" onclick="changeImage('images/mealtray.jpg')">
+                            <img src="images/burger-box.jpg" alt="Bento Box 3" class="thumbnail" onclick="changeImage('images/burger-box.jpg')">
+                            <img src="images/CP.jpg" alt="Bento Box 4" class="thumbnail" onclick="changeImage('images/CP.jpg')">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Details -->
+                <div class="product-info">
+                    <h1 class="product-title">Bento Boxes</h1>
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">(4.8/5 - 124 reviews)</span>
+                    </div>
+                    
+                    <div class="price-section">
+                        <span class="current-price">₹12.50</span>
+                        <span class="original-price">₹15.00</span>
+                        <span class="discount">17% OFF</span>
+                    </div>
+
+                    <div class="size-variant-section">
+                        <label>Available Sizes:</label>
+                        <div class="size-options">
+                            <button class="size-btn active" data-size="6-compartment" title="6-Compartment Box">6-Compartment</button>
+                            <button class="size-btn" data-size="4-compartment" title="4-Compartment Box">4-Compartment</button>
+                            <button class="size-btn" data-size="3-compartment" title="3-Compartment Box">3-Compartment</button>
+                        </div>
+                    </div>
+
+                    <div class="quantity-section">
+                        <label>Quantity:</label>
+                        <div class="quantity-controls">
+                            <button onclick="decreaseQuantity()">-</button>
+                            <input type="number" id="quantity" value="100" min="100">
+                            <button onclick="increaseQuantity()">+</button>
+                        </div>
+                        <span class="min-order">Minimum order: 100 pieces</span>
+                    </div>
+
+                    <div class="location-section">
+                        <h3><i class="fas fa-map-marker-alt"></i> Available Locations</h3>
+                        <div class="locations">
+                            <div class="location-item">
+                                <strong>Mumbai Warehouse</strong>
+                                <p>Andheri East, Mumbai - 400069</p>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                            <div class="location-item">
+                                <strong>Delhi Distribution Center</strong>
+                                <p>Gurgaon, Haryana - 122001</p>
+                                <span class="stock-status in-stock">In Stock</span>
+                            </div>
+                            <div class="location-item">
+                                <strong>Bangalore Hub</strong>
+                                <p>Whitefield, Bangalore - 560066</p>
+                                <span class="stock-status limited">Limited Stock</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn-primary">Add to Cart</button>
+                        <button class="btn-secondary">Request Quote</button>
+                        <button class="btn-wishlist"><i class="fas fa-heart"></i></button>
+                    </div>
+
+                    <div class="product-features">
+                        <div class="feature-item">
+                            <i class="fas fa-leaf"></i>
+                            <span>100% Biodegradable</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Food Safe</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-truck"></i>
+                            <span>Free Delivery on 1000+ pieces</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Description Section -->
+        <section class="product-description">
+            <div class="description-container">
+                <h2>Product Details</h2>
+                <div class="description-content">
+                    <div class="description-text">
+                        <h3>What is it used for?</h3>
+                        <p>Our Bento Boxes are perfect for restaurants, cloud kitchens, and food delivery services looking for sustainable packaging solutions. These compartmentalized containers are ideal for:</p>
+                        <ul>
+                            <li>Asian cuisine restaurants serving rice bowls and combo meals</li>
+                            <li>Corporate catering for organized meal presentations</li>
+                            <li>Food delivery services requiring leak-proof containers</li>
+                            <li>Meal prep businesses offering portion-controlled meals</li>
+                            <li>Event catering for easy serving and cleanup</li>
+                        </ul>
+                        
+                        <h3>Key Benefits</h3>
+                        <p>Made from agricultural waste and natural fibers, these boxes offer superior performance while being environmentally responsible. The multi-compartment design keeps different food items separate, maintaining flavors and presentation quality during transport.</p>
+                    </div>
+                    
+                    <div class="specifications">
+                        <h3>Specifications</h3>
+                        <table class="spec-table">
+                            <tr><td>Material</td><td>Bagasse & Kraft Fiber</td></tr>
+                            <tr><td>Capacity</td><td>500ml, 750ml, 1000ml</td></tr>
+                            <tr><td>Compartments</td><td>2, 3, or 4 sections</td></tr>
+                            <tr><td>Temperature Range</td><td>-20°C to 120°C</td></tr>
+                            <tr><td>Microwave Safe</td><td>Yes (up to 2 minutes)</td></tr>
+                            <tr><td>Freezer Safe</td><td>Yes</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Similar Products Section -->
+        <section class="similar-products">
+            <div class="similar-container">
+                <div class="section-header">
+                    <h2>Similar Products</h2>
+                    <p>Explore <span class="product-count">8</span> more products in Food Containers category</p>
+                </div>
+                
+                <div class="products-slider">
+                    <button class="slider-btn prev" onclick="slideProducts(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="products-track" id="productsTrack">
+                        <div class="product-card">
+                            <img src="images/mealtray.jpg" alt="Meal Trays">
+                            <h4>Meal Trays</h4>
+                            <p>₹8.50 - ₹15.00</p>
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/BL.webp" alt="Bowls & Lids">
+                            <h4>Bowls & Lids</h4>
+                            <p>₹6.00 - ₹12.00</p>
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/burger-box.jpg" alt="Burger Boxes">
+                            <h4>Burger Boxes</h4>
+                            <p>₹10.00 - ₹18.00</p>
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/Pizza.jpg" alt="Pizza Boxes">
+                            <h4>Pizza Boxes</h4>
+                            <p>₹15.00 - ₹25.00</p>
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/CP.jpg" alt="Custom Packaging">
+                            <h4>Custom Packaging</h4>
+                            <p>₹20.00 - ₹35.00</p>
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                        <div class="product-card">
+                            <img src="images/coffee-cup.jpg" alt="Cups & Sippers">
+                            <h4>Cups & Sippers</h4>
+                            <p>₹4.50 - ₹8.00</p>
+                            <button class="quick-view">Quick View</button>
+                        </div>
+                    </div>
+                    
+                    <button class="slider-btn next" onclick="slideProducts(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <div class="view-all">
+                    <a href="category-food-containers.html" class="btn-view-all">View All Food Containers (8 products)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        .product-main {
+            padding: 8rem 5% 4rem;
+            background: rgba(255,255,255,0.95);
+            margin: 0 2rem;
+            border-radius: 20px;
+            margin-top: 2rem;
+        }
+        
+        .product-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .product-images {
+            position: sticky;
+            top: 2rem;
+            height: fit-content;
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        
+        .thumbnail-list {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            overflow-x: auto;
+        }
+        
+        .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .thumbnail.active, .thumbnail:hover {
+            opacity: 1;
+            border-color: var(--warm-gold);
+        }
+        
+        .product-info {
+            padding: 2rem 0;
+        }
+        
+        .product-title {
+            font-size: 2.5rem;
+            color: var(--olive-shadow);
+            margin-bottom: 1rem;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .stars {
+            color: #ffc107;
+        }
+        
+        .rating-text {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .price-section {
+            margin-bottom: 2rem;
+        }
+        
+        .current-price {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--warm-gold);
+        }
+        
+        .original-price {
+            font-size: 1.2rem;
+            color: #999;
+            text-decoration: line-through;
+            margin-left: 1rem;
+        }
+        
+        .discount {
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-left: 1rem;
+        }
+
+        /* Size/Variant Section Styles */
+        .size-variant-section {
+            margin-bottom: 2rem;
+        }
+
+        .size-variant-section label {
+            display: block;
+            font-weight: 600;
+            color: var(--olive-shadow);
+            margin-bottom: 1rem;
+        }
+
+        .size-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .size-btn {
+            padding: 0.75rem 1.25rem;
+            border: 2px solid #ddd;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--olive-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .size-btn:hover {
+            border-color: var(--warm-gold);
+            color: var(--warm-gold);
+        }
+
+        .size-btn.active {
+            background: var(--warm-gold);
+            color: white;
+            border-color: var(--warm-gold);
+        }
+        
+        .quantity-section {
+            margin-bottom: 2rem;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.5rem 0;
+        }
+        
+        .quantity-controls button {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ddd;
+            background: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        
+        .quantity-controls input {
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .min-order {
+            font-size: 0.8rem;
+            color: #666;
+        }
+        
+        .location-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .location-section h3 {
+            color: var(--olive-shadow);
+            margin-bottom: 1rem;
+        }
+        
+        .location-item {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .location-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .stock-status {
+            padding: 0.2rem 0.8rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .in-stock {
+            background: #d4edda;
+            color: #155724;
+        }
+        
+        .limited {
+            background: #fff3cd;
+            color: #856404;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-primary {
+            flex: 1;
+            padding: 1rem;
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background: #b6762f;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            flex: 1;
+            padding: 1rem;
+            background: transparent;
+            color: var(--olive-shadow);
+            border: 2px solid var(--olive-shadow);
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--olive-shadow);
+            color: white;
+        }
+        
+        .btn-wishlist {
+            width: 50px;
+            height: 50px;
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            color: #e74c3c;
+            font-size: 1.2rem;
+        }
+        
+        .product-features {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            color: var(--olive-shadow);
+        }
+        
+        .feature-item i {
+            color: var(--warm-gold);
+            width: 20px;
+        }
+        
+        .product-description {
+            padding: 4rem 5%;
+            background: rgba(255,255,255,0.9);
+            margin: 2rem;
+            border-radius: 20px;
+        }
+        
+        .description-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .description-container h2 {
+            color: var(--olive-shadow);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .description-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 3rem;
+        }
+        
+        .description-text h3 {
+            color: var(--warm-gold);
+            margin: 1.5rem 0 1rem;
+        }
+        
+        .description-text ul {
+            margin: 1rem 0;
+            padding-left: 1.5rem;
+        }
+        
+        .description-text li {
+            margin-bottom: 0.5rem;
+            color: var(--olive-shadow);
+        }
+        
+        .spec-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .spec-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .spec-table td:first-child {
+            font-weight: 600;
+            background: #f8f9fa;
+            color: var(--olive-shadow);
+        }
+        
+        .similar-products {
+            padding: 4rem 5%;
+            background: rgba(255,255,255,0.85);
+            margin: 2rem;
+            border-radius: 20px;
+        }
+        
+        .similar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            color: var(--olive-shadow);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-count {
+            color: var(--warm-gold);
+            font-weight: 600;
+        }
+        
+        .products-slider {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .products-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card {
+            min-width: 250px;
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .product-card h4 {
+            color: var(--olive-shadow);
+            margin-bottom: 0.5rem;
+        }
+        
+        .product-card p {
+            color: var(--warm-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .quick-view {
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quick-view:hover {
+            background: #b6762f;
+        }
+        
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--warm-gold);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+        
+        .slider-btn:hover {
+            background: #b6762f;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .slider-btn.prev {
+            left: -25px;
+        }
+        
+        .slider-btn.next {
+            right: -25px;
+        }
+        
+        .view-all {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .btn-view-all {
+            background: var(--olive-shadow);
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-view-all:hover {
+            background: #2d2e15;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 900px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .description-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .products-track {
+                gap: 1rem;
+            }
+            
+            .product-card {
+                min-width: 200px;
+            }
+        }
+    </style>
+
+    <script>
+        let currentSlide = 0;
+        const maxSlides = 3;
+
+        function changeImage(src) {
+            document.getElementById('mainImage').src = src;
+            
+            // Update active thumbnail
+            document.querySelectorAll('.thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function increaseQuantity() {
+            const input = document.getElementById('quantity');
+            input.value = parseInt(input.value) + 100;
+        }
+
+        function decreaseQuantity() {
+            const input = document.getElementById('quantity');
+            if (parseInt(input.value) > 100) {
+                input.value = parseInt(input.value) - 100;
+            }
+        }
+
+        function slideProducts(direction) {
+            const track = document.getElementById('productsTrack');
+            currentSlide += direction;
+            
+            if (currentSlide < 0) currentSlide = 0;
+            if (currentSlide > maxSlides) currentSlide = maxSlides;
+            
+            const translateX = -currentSlide * 270; // 250px width + 20px gap
+            track.style.transform = `translateX(${translateX}px)`;
+        }
+    </script>
+</body>
+</html>
