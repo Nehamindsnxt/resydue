@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bento Boxes - Resydue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+              <div class="brand">
+            <a href="index.html"><img src="images/Logo1.png" alt="Resydue logo" class="logo"></a>
+        </div>
+        <ul class="nav-links animate-slideIn">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#about">About</a></li>
+            <li><a href="index.html#products">Products</a></li>
+        </ul>
+        <div class="nav-right">
+            <a href="contact.html" class="btn">Contact</a>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="product-detail">
+            <div class="product-detail-content">
+                <div class="product-detail-images">
+                    <img src="images/Bento.jpg" alt="Bento Boxes" class="main-product-image">
+                    <div class="two-column-images">
+                        <img src="images/mealtray.jpg" alt="Bento Box Detail 1" class="column-image">
+                        <img src="images/burger-box.jpg" alt="Bento Box Detail 2" class="column-image">
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <h1 class="heading">Bento Boxes</h1>
+                    <p class="lead">Sturdy, leak-resistant and delivery-tested packaging for Asian meals, combos and premium takeaways.</p>
+                    
+                    <div class="product-features">
+                        <h3 class="subheading">Key Features</h3>
+                        <ul class="feature-list">
+                            <li><i class="fas fa-check"></i> 100% biodegradable materials</li>
+                            <li><i class="fas fa-check"></i> Leak-resistant design</li>
+                            <li><i class="fas fa-check"></i> Multiple compartments</li>
+                            <li><i class="fas fa-check"></i> Microwave safe</li>
+                            <li><i class="fas fa-check"></i> Delivery-tested durability</li>
+                            <li><i class="fas fa-check"></i> Custom branding available</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3 class="subheading">Specifications</h3>
+                        <ul class="spec-list">
+                            <li><strong>Material:</strong> Bagasse & Kraft Fiber</li>
+                            <li><strong>Sizes Available:</strong> 500ml, 750ml, 1000ml</li>
+                            <li><strong>Temperature Range:</strong> -20°C to 120°C</li>
+                            <li><strong>Compartments:</strong> 2, 3, or 4 sections</li>
+                        </ul>
+                    </div>
+
+                    <div class="product-cta-buttons">
+                        <a href="contact.html" class="btn-cta">Request Quote</a>
+                        <a href="contact.html" class="btn-secondary">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <div class="section-card">
+                <h2 class="heading">Related Products</h2>
+                <div class="products-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1200px; margin: 2rem auto;">
+                    <div class="product-item">
+                        <div class="product-image">
+                            <a href="product-meal-trays.html"><img src="images/mealtray.jpg" alt="Meal Trays" class="product-img"></a>
+                        </div>
+                        <div class="product-info light-green">
+                            <p>Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <a href="product-bowls-lids.html"><img src="images/BL.webp" alt="Bowls & Lids" class="product-img"></a>
+                        </div>
+                        <div class="product-info light-blue">
+                            <p>Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.</p>
+                        </div>
+                    </div>
+                    <div class="product-item">
+                        <div class="product-image">
+                            <a href="product-custom-packaging.html"><img src="images/CP.jpg" alt="Custom Packaging" class="product-img"></a>
+                        </div>
+                        <div class="product-info light-mint">
+                            <p>Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-columns">
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-col">
+                <h3>Contact Us</h3>
+                <p>Email: <a href="mailto:info@resydue.com">info@resydue.com</a></p>
+                <p>Phone: <a href="tel:+911234567890">+91 123 456 7890</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .product-detail {
+            padding: 8rem 5% 4rem;
+            background: var(--pale-linen);
+        }
+        .product-detail-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .main-product-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+        .two-column-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .column-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+        .column-image:hover {
+            transform: scale(1.05);
+        }
+        .product-detail-info {
+            padding: 2rem 0;
+        }
+        .product-detail-info .heading {
+            margin-bottom: 1rem;
+        }
+        .product-detail-info .lead {
+            margin-bottom: 2rem;
+            color: var(--olive-shadow);
+        }
+        .product-features, .product-specs {
+            margin: 2rem 0;
+        }
+        .feature-list, .spec-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--olive-shadow);
+        }
+        .feature-list i {
+            color: var(--warm-gold);
+            margin-right: 0.5rem;
+        }
+        .spec-list li {
+            padding: 0.5rem 0;
+            color: var(--olive-shadow);
+        }
+        .product-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .related-products {
+            padding: 4rem 5%;
+            background: #fff;
+        }
+        @media (max-width: 900px) {
+            .product-detail-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .product-cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>
