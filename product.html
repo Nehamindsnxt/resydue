@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product - Resydue</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="brand">
+                <a href="index.html"><img src="images/Logo1.png" alt="Resydue logo" class="logo"></a>
+            </div>
+            <ul class="nav-links animate-slideIn">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#products">Products</a></li>
+            </ul>
+            <div class="nav-right">
+                <a href="contact.html" class="btn">Contact</a>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="product-detail">
+            <div class="product-detail-content">
+                <div class="product-detail-images">
+                    <img id="mainImage" src="images/Bento.jpg" alt="Product" class="main-product-image">
+                    <div class="two-column-images" id="thumbnailContainer">
+                        <!-- Thumbnails will be populated here -->
+                    </div>
+                </div>
+                <div class="product-detail-info">
+                    <h1 class="heading product-title">Product Name</h1>
+                    <p class="lead product-description">Product description will appear here.</p>
+                    
+                    <div class="product-features">
+                        <h3 class="subheading">Key Features</h3>
+                        <ul class="feature-list" id="featuresList">
+                            <!-- Features will be populated dynamically -->
+                        </ul>
+                    </div>
+
+                    <div class="product-specs">
+                        <h3 class="subheading">Specifications</h3>
+                        <ul class="spec-list" id="specsList">
+                            <!-- Specifications will be populated dynamically -->
+                        </ul>
+                    </div>
+
+                    <div class="product-cta-buttons">
+                        <a href="contact.html" class="btn-cta">Request Quote</a>
+                        <a href="contact.html" class="btn-secondary">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="related-products">
+            <div class="section-card">
+                <h2 class="heading">Related Products</h2>
+                <div class="products-grid" style="grid-template-columns: repeat(3, 1fr); max-width: 1200px; margin: 2rem auto;" id="relatedProductsGrid">
+                    <!-- Related products will be populated dynamically -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <style>
+        .product-detail {
+            padding: 8rem 5% 4rem;
+            background: var(--pale-linen);
+        }
+        .product-detail-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+        .main-product-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+            cursor: pointer;
+        }
+        .two-column-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .column-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        .column-image:hover {
+            transform: scale(1.05);
+        }
+        .product-detail-info {
+            padding: 2rem 0;
+        }
+        .product-detail-info .heading {
+            margin-bottom: 1rem;
+        }
+        .product-detail-info .lead {
+            margin-bottom: 2rem;
+            color: var(--olive-shadow);
+        }
+        .product-features, .product-specs {
+            margin: 2rem 0;
+        }
+        .feature-list, .spec-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 1rem;
+        }
+        .feature-list li {
+            padding: 0.5rem 0;
+            color: var(--olive-shadow);
+        }
+        .feature-list i {
+            color: var(--warm-gold);
+            margin-right: 0.5rem;
+        }
+        .spec-list li {
+            padding: 0.5rem 0;
+            color: var(--olive-shadow);
+        }
+        .product-cta-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .related-products {
+            padding: 4rem 5%;
+            background: #fff;
+        }
+        @media (max-width: 900px) {
+            .product-detail-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .product-cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <script>
+        // Load footer component
+        function loadComponent(elementId, filePath) {
+            fetch(filePath)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById(elementId).innerHTML = html;
+                })
+                .catch(error => console.error('Error loading component:', error));
+        }
+
+        let productData = null;
+        const productTypeMap = {
+            'bento-boxes': 'Meal Trays',
+            'cups-sippers': 'Bowls & Lids',
+            'burger-boxes': 'Pizza Boxes',
+            'meal-trays': 'Bento Boxes',
+            'cutlery-accessories': 'Cups & Sippers',
+            'custom-packaging': 'Burger Boxes',
+            'pizza-boxes': 'Custom Packaging',
+            'bowls-lids': 'Cutlery & Accessories'
+        };
+
+        // Get URL parameter
+        function getProductType() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('product') || 'bento-boxes';
+        }
+
+        // Load product data dynamically
+        async function loadProductData() {
+            try {
+                const productType = getProductType();
+                const response = await fetch('products-data.json');
+                const allProducts = await response.json();
+                productData = allProducts[productType];
+                
+                if (!productData) {
+                    console.error('Product not found:', productType);
+                    return;
+                }
+                
+                // Populate all product data
+                populateProductData();
+            } catch (error) {
+                console.error('Error loading product data:', error);
+            }
+        }
+
+        // Populate product data into HTML
+        function populateProductData() {
+            if (!productData) return;
+
+            // Update page title and product title
+            document.title = productData.title + ' - Resydue';
+            const productTitle = document.querySelector('.product-title');
+            if (productTitle) productTitle.textContent = productData.title;
+            
+            // Update description
+            const productDesc = document.querySelector('.product-description');
+            if (productDesc) productDesc.textContent = productData.description;
+            
+            // Update main image
+            const mainImage = document.getElementById('mainImage');
+            if (mainImage && productData.images) {
+                mainImage.src = productData.images.main;
+                mainImage.alt = productData.title;
+                
+                // Add click handler to main image
+                mainImage.onclick = () => changeImage(productData.images.main);
+            }
+            
+            // Update thumbnails in two-column layout
+            const thumbnailContainer = document.getElementById('thumbnailContainer');
+            if (thumbnailContainer && productData.images && productData.images.thumbnails) {
+                thumbnailContainer.innerHTML = '';
+                // Show up to 2 thumbnails (excluding the main image shown above)
+                const thumbsToShow = productData.images.thumbnails.slice(1, 3);
+                thumbsToShow.forEach(img => {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = img;
+                    thumbnail.alt = productData.title;
+                    thumbnail.className = 'column-image';
+                    thumbnail.onclick = () => changeImage(img);
+                    thumbnailContainer.appendChild(thumbnail);
+                });
+            }
+            
+            // Update features list
+            const featuresList = document.getElementById('featuresList');
+            if (featuresList && productData.features) {
+                featuresList.innerHTML = '';
+                productData.features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<i class="fas fa-check"></i> ${feature}`;
+                    featuresList.appendChild(li);
+                });
+            }
+            
+            // Update specifications list
+            const specsList = document.getElementById('specsList');
+            if (specsList && productData.specs) {
+                specsList.innerHTML = '';
+                Object.entries(productData.specs).forEach(([key, value]) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `<strong>${key}:</strong> ${value}`;
+                    specsList.appendChild(li);
+                });
+            }
+            
+            // Populate related products
+            populateRelatedProducts();
+        }
+
+        function changeImage(src) {
+            const mainImage = document.getElementById('mainImage');
+            if (mainImage) {
+                mainImage.src = src;
+            }
+        }
+
+        function populateRelatedProducts() {
+            const relatedGrid = document.getElementById('relatedProductsGrid');
+            if (!relatedGrid) return;
+
+            // Define related products based on current product
+            const currentType = getProductType();
+            const relatedProducts = [
+                { type: 'meal-trays', img: 'images/mealtray.jpg', name: 'Meal Trays', desc: 'Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.' },
+                { type: 'bowls-lids', img: 'images/BL.webp', name: 'Bowls & Lids', desc: 'Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.' },
+                { type: 'custom-packaging', img: 'images/CP.jpg', name: 'Custom Packaging', desc: 'Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.' }
+            ].filter(p => p.type !== currentType);
+
+            relatedGrid.innerHTML = '';
+            relatedProducts.slice(0, 3).forEach((product, index) => {
+                const colorClass = index === 0 ? 'light-green' : (index === 1 ? 'light-blue' : 'light-mint');
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product-item';
+                productDiv.innerHTML = `
+                    <div class="product-image">
+                        <a href="product.html?product=${product.type}">
+                            <img src="${product.img}" alt="${product.name}" class="product-img">
+                        </a>
+                    </div>
+                    <div class="product-info ${colorClass}">
+                        <p>${product.desc}</p>
+                    </div>
+                `;
+                relatedGrid.appendChild(productDiv);
+            });
+        }
+
+        function toggleMobileMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            if (navLinks) {
+                navLinks.classList.toggle('active');
+            }
+        }
+
+        // Load product data when page loads
+        window.addEventListener('DOMContentLoaded', function() {
+            loadComponent('footer-placeholder', 'footer.html');
+            loadProductData();
+        });
+    </script>
+</body>
+</html>
