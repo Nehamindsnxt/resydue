@@ -1,0 +1,337 @@
+{
+  "bento-boxes": {
+    "title": "Bento Boxes",
+    "name": "Premium Bento Boxes",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Bento Boxes</span>",
+    "price": {
+      "current": "₹12.50",
+      "original": "₹15.00",
+      "discount": "17% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.8",
+      "reviews": "124"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 100 pieces",
+      "bulkDiscount": "500+ pieces: Extra 5% off"
+    },
+    "images": {
+      "main": "images/Bento.jpg",
+      "thumbnails": [
+        "images/Bento.jpg",
+        "images/mealtray.jpg",
+        "images/burger-box.jpg"
+      ]
+    },
+    "description": "Sturdy, leak-resistant and delivery-tested. Ideal for Asian meals, combos and premium takeaways.",
+    "features": [
+      "100% Biodegradable & Compostable",
+      "Food Safe & Non-Toxic",
+      "Leak-Resistant Design",
+      "Microwave Safe",
+      "Multiple Compartments",
+      "Custom Branding Available"
+    ],
+    "specs": {
+      "Material": "Bagasse & Kraft Fiber",
+      "Sizes Available": "500ml, 750ml, 1000ml",
+      "Temperature Range": "-20°C to 120°C",
+      "Compartments": "2, 3, or 4 sections"
+    }
+  },
+  "cups-sippers": {
+    "title": "Cups & Sippers",
+    "name": "Eco-Friendly Cups & Sippers",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Cups & Sippers</span>",
+    "price": {
+      "current": "₹2.50 - ₹5.00",
+      "original": "₹3.50 - ₹6.50",
+      "discount": "15% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.7",
+      "reviews": "89"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 500 pieces",
+      "bulkDiscount": "2000+ pieces: Extra 10% off"
+    },
+    "images": {
+      "main": "images/coffee-cup.jpg",
+      "thumbnails": [
+        "images/coffee-cup.jpg",
+        "images/coffee-cup1.jpg"
+      ]
+    },
+    "description": "Kraft-based and coated beverage containers with safe linings and custom branding options.",
+    "features": [
+      "100% Biodegradable Kraft Paper",
+      "Food-Safe Coating",
+      "Heat-Resistant up to 90°C",
+      "Multiple Size Options",
+      "Custom Branding Available",
+      "Leak-Proof Design"
+    ],
+    "specs": {
+      "Material": "Kraft Paper with PE Coating",
+      "Sizes Available": "6oz, 8oz, 10oz, 12oz, 16oz",
+      "Temperature Range": "Up to 90°C",
+      "Minimum Order": "500 pieces"
+    }
+  },
+  "burger-boxes": {
+    "title": "Burger Boxes",
+    "name": "Premium Burger Boxes",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Burger Boxes</span>",
+    "price": {
+      "current": "₹8.50 - ₹12.00",
+      "original": "₹10.00 - ₹14.00",
+      "discount": "15% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.9",
+      "reviews": "156"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 200 pieces",
+      "bulkDiscount": "1000+ pieces: Extra 8% off"
+    },
+    "images": {
+      "main": "images/burger-box.jpg",
+      "thumbnails": [
+        "images/burger-box.jpg",
+        "images/burger-box1.jpg"
+      ]
+    },
+    "description": "Sturdy, moisture-wicking, and easy-to-handle clamshells designed to keep buns soft and prevent structural collapse.",
+    "features": [
+      "100% Biodegradable Materials",
+      "Grease-Resistant Coating",
+      "Moisture-Wicking Design",
+      "Secure Closure Mechanism",
+      "Maintains Food Freshness",
+      "Delivery-Tested Durability"
+    ],
+    "specs": {
+      "Material": "Bagasse & Kraft Fiber",
+      "Sizes Available": "Standard (fits all burger sizes)",
+      "Temperature Range": "-10°C to 100°C",
+      "Minimum Order": "200 pieces"
+    }
+  },
+  "meal-trays": {
+    "title": "Meal Trays",
+    "name": "Multi-Compartment Meal Trays",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Meal Trays</span>",
+    "price": {
+      "current": "₹15.00 - ₹18.50",
+      "original": "₹18.00 - ₹22.00",
+      "discount": "16% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.8",
+      "reviews": "98"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 100 pieces",
+      "bulkDiscount": "500+ pieces: Extra 7% off"
+    },
+    "images": {
+      "main": "images/mealtray.jpg",
+      "thumbnails": [
+        "images/mealtray.jpg",
+        "images/Bento.jpg"
+      ]
+    },
+    "description": "Three-compartment and five-compartment options for cloud kitchens, corporate catering and QSRs.",
+    "features": [
+      "100% Biodegradable Materials",
+      "Multiple Compartment Options",
+      "Leak-Resistant Barriers",
+      "Microwave Safe",
+      "Stackable Design",
+      "Ideal for Catering"
+    ],
+    "specs": {
+      "Material": "Bagasse & Kraft Fiber",
+      "Sizes Available": "3-compartment, 5-compartment",
+      "Temperature Range": "-20°C to 120°C",
+      "Minimum Order": "100 pieces"
+    }
+  },
+  "cutlery-accessories": {
+    "title": "Cutlery & Accessories",
+    "name": "Biodegradable Cutlery & Accessories",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Cutlery & Accessories</span>",
+    "price": {
+      "current": "₹2.50 - ₹5.00",
+      "original": "₹3.00 - ₹6.00",
+      "discount": "17% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 4,
+      "score": "4.5",
+      "reviews": "67"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 500 pieces",
+      "bulkDiscount": "2000+ pieces: Extra 12% off"
+    },
+    "images": {
+      "main": "images/CA.jpg",
+      "thumbnails": [
+        "images/CA.jpg"
+      ]
+    },
+    "description": "Tree-free forks, spoons, stirrers and trays designed for durability without plastic.",
+    "features": [
+      "100% Biodegradable Materials",
+      "Made from Wood Pulp",
+      "Strong and Durable",
+      "Heat Resistant",
+      "Smooth Finish",
+      "No Plastic Coating"
+    ],
+    "specs": {
+      "Material": "Birch Wood / Bamboo Fiber",
+      "Items Available": "Forks, Spoons, Knives, Stirrers",
+      "Temperature Range": "Up to 85°C",
+      "Minimum Order": "500 pieces"
+    }
+  },
+  "custom-packaging": {
+    "title": "Custom Packaging",
+    "name": "Custom Packaging Solutions",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Custom Packaging</span>",
+    "price": {
+      "current": "₹15.00 - ₹35.00",
+      "original": "₹20.00 - ₹45.00",
+      "discount": "20% OFF",
+      "note": "Price varies by customization (Contact for quote)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.9",
+      "reviews": "145"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 500 pieces",
+      "bulkDiscount": "Custom pricing for bulk orders"
+    },
+    "images": {
+      "main": "images/CP.jpg",
+      "thumbnails": [
+        "images/CP.jpg",
+        "images/paper-wrap.jpg"
+      ]
+    },
+    "description": "Tailor-made shapes, prints, coatings and sizes for brands that need unique packaging solutions.",
+    "features": [
+      "Fully Customizable Designs",
+      "Custom Printing & Branding",
+      "Wide Range of Materials",
+      "Any Size or Shape",
+      "Food-Safe Coatings Available",
+      "Eco-Friendly Materials"
+    ],
+    "specs": {
+      "Material": "Bagasse, Kraft Paper, PLA, or Hybrid",
+      "Customization": "Size, shape, color, branding",
+      "Printing": "Full-color printing available",
+      "Minimum Order": "500 pieces (varies by complexity)"
+    }
+  },
+  "pizza-boxes": {
+    "title": "Pizza Boxes",
+    "name": "Premium Pizza Boxes",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Pizza Boxes</span>",
+    "price": {
+      "current": "₹15.00 - ₹25.00",
+      "original": "₹18.00 - ₹30.00",
+      "discount": "17% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.8",
+      "reviews": "112"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 500 pieces",
+      "bulkDiscount": "1000+ pieces: Extra 8% off"
+    },
+    "images": {
+      "main": "images/Pizza.jpg",
+      "thumbnails": [
+        "images/Pizza.jpg",
+        "images/box-pizza2.jpg"
+      ]
+    },
+    "description": "Ventilated, crush-resistant, and grease-proof designs that maintain crust crispness and retain heat during transit.",
+    "features": [
+      "Ventilated Design",
+      "Crush-Resistant",
+      "Grease-Proof Coating",
+      "Maintains Crust Crispness",
+      "Heat Retention",
+      "Custom Branding Available"
+    ],
+    "specs": {
+      "Material": "Corrugated Kraft Paper",
+      "Sizes Available": "10\", 12\", 14\", 16\", 18\"",
+      "Temperature Range": "Up to 100°C",
+      "Minimum Order": "500 pieces"
+    }
+  },
+  "bowls-lids": {
+    "title": "Bowls & Lids",
+    "name": "Premium Bowls & Lids",
+    "breadcrumb": "<a href='index.html'>Home</a> > <a href='index.html#products'>Products</a> > <span>Bowls & Lids</span>",
+    "price": {
+      "current": "₹6.00 - ₹12.00",
+      "original": "₹8.00 - ₹15.00",
+      "discount": "20% OFF",
+      "note": "Price per piece (Bulk orders available)"
+    },
+    "rating": {
+      "stars": 5,
+      "score": "4.7",
+      "reviews": "93"
+    },
+    "quantity": {
+      "minOrder": "Minimum order: 200 pieces",
+      "bulkDiscount": "1000+ pieces: Extra 10% off"
+    },
+    "images": {
+      "main": "images/BL.webp",
+      "thumbnails": [
+        "images/BL.webp"
+      ]
+    },
+    "description": "Lightweight, heat-stable and oil-resistant for soups, curries, pastas and salads.",
+    "features": [
+      "100% Biodegradable",
+      "Heat-Stable",
+      "Oil-Resistant",
+      "Lightweight Design",
+      "Secure Lids",
+      "Microwave Safe"
+    ],
+    "specs": {
+      "Material": "Bagasse & Kraft Fiber",
+      "Sizes Available": "8oz, 12oz, 16oz, 24oz, 32oz",
+      "Temperature Range": "-20°C to 100°C",
+      "Minimum Order": "200 pieces"
+    }
+  }
+}

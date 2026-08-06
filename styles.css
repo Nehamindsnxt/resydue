@@ -1590,6 +1590,342 @@ header {
     margin-top: 1rem;
 }
 
+/* Product Categories Section */
+.product-categories {
+    padding: 5rem 5%;
+    background: var(--pale-linen);
+    text-align: left;
+}
+
+.product-categories .heading {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.product-categories .lead {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.category-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(206, 138, 57, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(206, 138, 57, 0.2), 0 0 0 1px rgba(206, 138, 57, 0.1);
+    background: linear-gradient(135deg, #fff 0%, #fefcf8 100%);
+}
+
+.category-card:hover::before {
+    left: 100%;
+}
+
+.category-card:hover .category-icon {
+    transform: scale(1.2) rotate(5deg);
+    color: var(--deep-terra);
+}
+
+.category-card:hover .subheading {
+    color: var(--deep-terra);
+}
+
+.category-icon {
+    font-size: 3rem;
+    color: var(--warm-gold);
+    margin-bottom: 1rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.category-card .subheading {
+    margin-bottom: 1rem;
+    transition: color 0.3s ease;
+}
+
+.category-card .body-text {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.category-products {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.product-tag {
+    background: var(--soft-sand);
+    color: var(--olive-shadow);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.category-card:hover .product-tag {
+    background: var(--warm-gold);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Staggered animations for category cards */
+.category-card:nth-child(1) { animation-delay: 0.1s; }
+.category-card:nth-child(2) { animation-delay: 0.2s; }
+.category-card:nth-child(3) { animation-delay: 0.3s; }
+.category-card:nth-child(4) { animation-delay: 0.4s; }
+
+@media (max-width: 768px) {
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    .category-card {
+        padding: 1.5rem;
+    }
+    
+    .category-icon {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-container {
+    margin-bottom: 2rem;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: var(--olive-shadow);
+}
+
+.breadcrumb-item {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.breadcrumb-item:hover {
+    color: var(--warm-gold);
+}
+
+.breadcrumb-item.active {
+    color: var(--warm-gold);
+    font-weight: 600;
+    cursor: default;
+}
+
+.breadcrumb-separator {
+    color: var(--soft-sand);
+    font-weight: bold;
+}
+
+/* Sub-categories Styles */
+.sub-categories-container {
+    margin-top: 2rem;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Sub-category Title and Description */
+.sub-category-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--olive-shadow);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.sub-category-description {
+    font-size: 1.1rem;
+    color: var(--olive-shadow);
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+/* Sub-category Navigation Buttons */
+.sub-nav-container {
+    display: none; /* Hidden by default on desktop */
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.sub-nav-btn {
+    background: var(--warm-gold);
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.sub-nav-btn:hover {
+    background: #b6762f;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+}
+
+/* Show navigation buttons only on mobile and tablet */
+@media (max-width: 1024px) {
+    .sub-nav-container {
+        display: flex;
+    }
+}
+
+/* Sub-category Carousel Styles */
+.sub-category-carousel {
+    position: relative;
+    margin-top: 2rem;
+}
+
+.sub-category-cards {
+    display: flex;
+    gap: 2rem;
+    overflow: hidden;
+    padding: 1rem 0;
+    transition: transform 0.6s cubic-bezier(.77,0,.18,1);
+}
+
+.sub-cap-card {
+    min-width: 350px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.sub-cap-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+}
+
+.sub-cap-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+}
+
+.sub-cap-card .card-text-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    color: white;
+    z-index: 2;
+}
+
+.sub-cap-card .subheading {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.sub-cap-card .product-card-details {
+    display: table;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.sub-cap-card .detail-badge {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+}
+
+.sub-cap-card .detail-price {
+    background: var(--warm-gold);
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.sub-cap-card .body-text {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    .sub-category-cards {
+        gap: 1rem;
+    }
+    
+    .sub-cap-card {
+        min-width: 280px;
+        height: 350px;
+    }
+    
+    .sub-cap-card .card-text-overlay {
+        padding: 1.5rem;
+    }
+}
+
+/* Remove old sub-category styles */
+
 /* Product Categories Grid */
 .category-grid {
     display: grid;
